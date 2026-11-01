@@ -37,8 +37,11 @@ Only where it does something:
 - One load sequence on the home page: the stage light comes up, the badge, the two motto lines and then the lead and buttons rise in (about 1.3 s, CSS only, scoped to `.page-home`).
 - Pit, the Hairline figure.
 - The product loops (two-device on screens 600px and wider, phone-only crop on phones): play only on screen, never on their own under reduced motion, with a pause button.
+- "How we work" plays once, the first time it is on screen: 01 lights, the line draws to 02, and so on to 04, then all settle (`js/motion.js` adds `.is-armed` and `.is-on`).
+- A light follows the cursor across cards and panels (`.service`, `.print`, `.features li`, `.call-panel`, `.form-sheet`, `.facts`): a soft amber glow inside and a brighter edge near the pointer. `js/motion.js` adds `.spot` and a `.spot-light` span, only with a mouse or pen. The hero's stage light leans toward the cursor (registered `--hx`/`--hy`).
 - Short hover moves: panels lift 2px, videos zoom 1.5%, arrows nudge.
-Nothing else: no scroll effects, no tickers, no moving grain. With reduced motion, nothing moves.
+Nothing else: no scroll effects, no tickers, no moving grain. With reduced motion, nothing plays on its own (the cursor light still follows the pointer).
+- The hero headline is sized to its own column (`container-type` on `.hero-copy`, `cqi` units), so it never runs into Pit at any screen width.
 
 ## How pages are made
 
