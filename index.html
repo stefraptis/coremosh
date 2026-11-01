@@ -18,7 +18,7 @@
 <link rel="preload" href="/fonts/big-shoulders-display.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/martian-mono.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/css/site.css?v=a4ad0056eb">
+<link rel="stylesheet" href="/css/site.css?v=668ba5ecb0">
 </head>
 <body class="page-home">
 <a class="skip" href="#main">Skip to content</a>
@@ -27,10 +27,10 @@
     <a class="mark" href="/"><img src="/brand/coremosh-logo.svg" width="1372" height="507" alt="Coremosh, home"></a>
     <nav aria-label="Main">
       <ul class="nav">
-        <li><a href="/work/">Work</a></li>
-        <li><a href="/design/">Design</a></li>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/#work">Work</a></li>
+        <li><a href="/#design">Design</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#contact">Contact</a></li>
       </ul>
     </nav>
   </div>
@@ -43,8 +43,8 @@
       <h1 class="display"><span class="line">We build the core.</span> <span class="line">You make the <span class="accent">noise.</span></span></h1>
       <p class="lead">Apps, websites and design for bands, artists and labels. Websites for anyone else with something to show.</p>
       <div class="actions">
-        <a class="btn" href="/contact/">Get in touch</a>
-        <a class="btn btn-ghost" href="/work/">See the work</a>
+        <a class="btn" href="#contact">Get in touch</a>
+        <a class="btn btn-ghost" href="#work">See the work</a>
       </div>
     </div>
     <figure class="pit-frame">
@@ -53,15 +53,15 @@
   </div>
 </section>
 
-<section class="section" aria-labelledby="work">
+<section class="section" id="work" aria-labelledby="work-h">
   <div class="wrap section-top">
     <div>
       <p class="kicker">Latest releases</p>
-      <h2 id="work">Selected work</h2>
+      <h2 id="work-h">Selected work</h2>
     </div>
-    <a class="arrow-link" href="/work/">All work</a>
+    <a class="arrow-link" href="#contact">Start yours</a>
   </div>
-<div class="wrap projects">
+  <div class="wrap projects">
   <article class="project">
     <div class="print">
       <figure class="case-media for-wide">
@@ -78,10 +78,18 @@
       </figure>
     </div>
     <div class="project-info">
-      <p class="meta"><span>Web app</span><span>2026</span></p>
-      <h3><a href="/work/bandeon/">Bandeon</a></h3>
-      <p>A workspace for bands and solo artists: when everyone is free, what we play, and who owes what. One app on every member's phone.</p>
-      <a class="arrow-link" href="/work/bandeon/">View project</a>
+      <div class="project-lead">
+        <p class="meta"><span>Web app</span><span>2026</span></p>
+        <h3>Bandeon</h3>
+        <p>A workspace for bands and solo artists: when everyone is free, what we play, and who owes what. One app on every member's phone.</p>
+        <a class="arrow-link" href="https://www.bandeon.app" rel="noopener">Visit bandeon.app</a>
+      </div>
+      <ul class="built" aria-label="What we built for Bandeon">
+          <li><strong>Availability</strong> Everyone adds when they are free, and the band books the best time in one tap.</li>
+          <li><strong>Calendar</strong> Rehearsals and gigs on any dates, who is coming, and a reminder the day before.</li>
+          <li><strong>Songs and stage mode</strong> Chords and lyrics, transposed with a tap, one song at a time on stage.</li>
+          <li><strong>Money and merch</strong> Expenses, gig fees, the band's fund and merch sales, settled in the fewest payments.</li>
+      </ul>
     </div>
   </article>
   <article class="project">
@@ -100,17 +108,24 @@
       </figure>
     </div>
     <div class="project-info">
-      <p class="meta"><span>Website</span><span>2026</span></p>
-      <h3><a href="/work/tilt-guild/">Tilt Guild</a></h3>
-      <p>The website of a rap metal band from Athens: releases, shows, merch, a giveaway and a press kit.</p>
-      <a class="arrow-link" href="/work/tilt-guild/">View project</a>
+      <div class="project-lead">
+        <p class="meta"><span>Website</span><span>2026</span></p>
+        <h3>Tilt Guild</h3>
+        <p>The website of a rap metal band from Athens: one address for fans, promoters and press, in a look taken from their live shows.</p>
+        <a class="arrow-link" href="https://www.tiltguild.com" rel="noopener">Visit tiltguild.com</a>
+      </div>
+      <ul class="built" aria-label="What we built for Tilt Guild">
+          <li><strong>A look from the stage</strong> Full-screen live photos, one dark red accent and heavy condensed type.</li>
+          <li><strong>Releases and shows</strong> A page for every release, and every show with tickets and a calendar file.</li>
+          <li><strong>Merch and giveaways</strong> Order requests for shirts and CDs, and giveaways with a countdown and a random winner.</li>
+          <li><strong>Press kit and links</strong> Bios in English and Greek, photos and logos to download, and a links page for social bios.</li>
+      </ul>
     </div>
   </article>
-</div>
-
+  </div>
 </section>
 
-<section class="section" aria-labelledby="do">
+<section class="section" id="services" aria-labelledby="do">
   <div class="wrap">
     <div class="section-top">
       <div>
@@ -124,32 +139,58 @@
         <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg></span>
         <h3>Apps</h3>
         <p>For the way a band actually works: rehearsals, who can make it, setlists, money and merch. Built for the phone first, and quick on a weak signal.</p>
-        <p class="meta"><span>Bandeon</span></p>
+        <a class="arrow-link" href="#contact" data-about="app">Ask about an app</a>
       </div>
       <div class="service">
         <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4" width="19" height="16" rx="2.5"/><path d="M2.5 8.5h19M6 6.3h.01M8.5 6.3h.01"/></svg></span>
         <h3>Websites</h3>
         <p>For bands and artists, and for shops, venues, studios and small businesses outside music. Fast, clear, and easy for search engines to read.</p>
-        <p class="meta"><span>Tilt Guild</span></p>
+        <a class="arrow-link" href="#contact" data-about="website">Ask about a website</a>
       </div>
       <div class="service">
         <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19.5 4.5 12 12 2.5l7.5 9.5L12 19.5Z"/><path d="M12 2.5v9"/><circle cx="12" cy="12.5" r="1.5"/><path d="M8 21.5h8"/></svg></span>
         <h3>Design</h3>
         <p>Logos, album and single covers, posters for live shows, release cards, and the look of every site and app we build.</p>
-        <p class="meta"><span>Logos</span><span>Covers</span><span>Posters</span></p>
+        <a class="arrow-link" href="#contact" data-about="design">Ask about design</a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section" aria-labelledby="how">
+<section class="section" id="design" aria-labelledby="design-h">
   <div class="wrap">
     <div class="section-top">
       <div>
-        <p class="kicker">Setlist</p>
-        <h2 id="how">How we work</h2>
+        <p class="kicker">Artwork</p>
+        <h2 id="design-h">Design</h2>
+      </div>
+      <a class="arrow-link" href="#contact" data-about="design">Need a logo, a cover or a poster?</a>
+    </div>
+    <ul class="offer" aria-label="What we design">
+      <li>Logos</li><li>Album and single covers</li><li>Posters for live shows</li><li>Release cards</li><li>Websites and apps</li>
+    </ul>
+  </div>
+  <div class="wrap wall">
+    <figure class="print"><img src="/media/design/tg-single-1200.webp" srcset="/media/design/tg-single-600.webp 600w, /media/design/tg-single-1200.webp 1200w" sizes="(min-width: 760px) 50vw, 100vw" width="1200" height="630" alt="Tilt Guild single card: Opoios Kanei Ena Vima, 24 April 2026, with the cover." loading="lazy" decoding="async"><figcaption>Tilt Guild, single card</figcaption></figure>
+    <figure class="print"><img src="/media/design/tg-album-1200.webp" srcset="/media/design/tg-album-600.webp 600w, /media/design/tg-album-1200.webp 1200w" sizes="(min-width: 760px) 50vw, 100vw" width="1200" height="630" alt="Tilt Guild album card: To Kolpo, 22 November 2024, with the cover." loading="lazy" decoding="async"><figcaption>Tilt Guild, album card</figcaption></figure>
+    <figure class="print"><img src="/media/design/tg-merch-1200.webp" srcset="/media/design/tg-merch-600.webp 600w, /media/design/tg-merch-1200.webp 1200w" sizes="(min-width: 760px) 50vw, 100vw" width="1200" height="630" alt="Tilt Guild merch card: t-shirts and CDs, with a photo of the shirt." loading="lazy" decoding="async"><figcaption>Tilt Guild, merch card</figcaption></figure>
+    <figure class="print"><img src="/media/design/tg-giveaway-1200.webp" srcset="/media/design/tg-giveaway-600.webp 600w, /media/design/tg-giveaway-1200.webp 1200w" sizes="(min-width: 760px) 50vw, 100vw" width="1200" height="630" alt="Tilt Guild giveaway card: win Tilt Guild merch, with a photo of the merch table." loading="lazy" decoding="async"><figcaption>Tilt Guild, giveaway card</figcaption></figure>
+  </div>
+</section>
+
+<section class="section" id="about" aria-labelledby="about-h">
+  <div class="wrap">
+    <div class="about">
+      <div>
+        <p class="kicker">About the studio</p>
+        <h2 id="about-h">Coremosh software studios</h2>
+      </div>
+      <div class="about-text">
+        <p class="lead">We design, build and run software: apps and websites for bands, artists and labels, design to go with them, and websites for anyone else.</p>
+        <p>We play in bands, and we build software for a living. Coremosh is where the two meet. We make the tools we wished our own bands had, and we use them every week. That is how we find out what is missing.</p>
       </div>
     </div>
+    <h3 class="steps-title">How we work</h3>
     <ol class="steps">
       <li>
         <h3>Talk</h3>
@@ -165,21 +206,48 @@
       </li>
       <li>
         <h3>Keep it running</h3>
-        <p>After launch we look after it: fast, secure and up to date.</p>
+        <p>After launch we look after it and keep it up to date.</p>
       </li>
     </ol>
   </div>
 </section>
 
-<section class="call" aria-labelledby="call">
+<section class="section contact" id="contact" aria-labelledby="contact-h">
   <div class="wrap">
-    <div class="call-panel">
-      <p class="kicker">Encore</p>
-      <h2 id="call">Have something in mind?</h2>
-      <p class="lead">Tell us about your band, your business or your idea. We read every message.</p>
-      <div class="actions">
-        <a class="btn" href="/contact/">Get in touch</a>
+    <div class="call-panel contact-panel">
+      <div class="contact-intro">
+        <p class="kicker">Encore</p>
+        <h2 id="contact-h">Have something in mind?</h2>
+        <p class="lead">Tell us about your band, your business or your idea. We read every message and reply by email.</p>
       </div>
+        <form class="form" action="https://formspree.io/f/mbggzeyq" method="POST">
+          <fieldset class="field topics">
+            <legend>What is it about?</legend>
+            <label class="topic"><input type="radio" name="about" value="app"> An app</label>
+            <label class="topic"><input type="radio" name="about" value="website"> A website</label>
+            <label class="topic"><input type="radio" name="about" value="design"> Design</label>
+            <label class="topic"><input type="radio" name="about" value="other" checked> Something else</label>
+          </fieldset>
+          <div class="field">
+            <label for="name">Your name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="email">Your email <span class="hint">We reply to this address.</span></label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="message">Your message <span class="hint">Who you are, what you need, and any links that help.</span></label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <div class="hp" aria-hidden="true">
+            <label for="company">Leave this empty</label>
+            <input id="company" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
+          </div>
+          <input type="hidden" name="_subject" value="Message from coremosh.com">
+          <button class="btn" type="submit">Send message</button>
+          <p class="form-note">Your message goes to us through Formspree. We use your details only to reply, and delete them once the conversation is over. More in <a href="/privacy/">Privacy</a>.</p>
+        </form>
     </div>
   </div>
 </section>
@@ -192,15 +260,15 @@
     <p class="foot-copy">&copy; 2026 Coremosh software studios</p>
     <nav aria-label="Footer">
       <ul class="foot-links">
-        <li><a href="/work/">Work</a></li>
-        <li><a href="/design/">Design</a></li>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/#work">Work</a></li>
+        <li><a href="/#design">Design</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#contact">Contact</a></li>
         <li><a href="/privacy/">Privacy</a></li>
       </ul>
     </nav>
   </div>
 </footer>
-<script src="/js/motion.js?v=192537b02f" defer></script>
+<script src="/js/motion.js?v=d75c1ddc01" defer></script>
 </body>
 </html>

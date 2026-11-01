@@ -2,7 +2,7 @@
 
 The site of Coremosh software studios. It shows the work (Bandeon, tiltguild.com) and what Coremosh makes: apps, websites and design (logos, album and single covers, posters for live shows, release cards, the look of sites and apps). Websites are for anyone, music or not. Every path ends at Contact.
 
-Nav: Work, Design, About, Contact (About is /about/, titled "About the studio"). Privacy in the footer.
+**One page** (Stefanos, 2 Nov 2026). Everything is on the home page, in this order: hero, Work (`#work`), What we do (`#services`), Design (`#design`), About with How we work (`#about`), Contact with the form (`#contact`). The only other pages are /privacy/ and the 404 page. The menu links to `/#work`, `/#design`, `/#about`, `/#contact` (so it also works from Privacy); `js/motion.js` marks the section in view. Contact buttons everywhere: hero "Get in touch", "Start yours", and "Ask about an app / a website / design" links that also pick the topic in the form (`data-about`, or `/?about=design`).
 
 Live address: https://www.coremosh.com (coremosh.com redirects there). Hosted on GitHub Pages from `main`. Stefanos commits and pushes from GitHub Desktop on Windows.
 
@@ -18,6 +18,7 @@ Live address: https://www.coremosh.com (coremosh.com redirects there). Hosted on
 - The idle game is not shown until Stefanos says so.
 - Bandeon: studios are hidden in the app, so the site does not mention them.
 - Plain verbs, sentence case, no em dashes, no all-caps labels.
+- Write for clients, not developers: no stack, frameworks, stylesheets, file sizes, speed budgets or accessibility test results on the site.
 
 ## Look: a rehearsal room at night, drawn clean (1 Nov 2026)
 
@@ -28,7 +29,7 @@ The idea stays (dark room, warm stage light, the metal logo) but the execution i
 - **Atmosphere:** soft amber and ember stage-light glows behind the hero, page heads and closing call, and a fine still grain. No gradients on text, no glows on buttons.
 - **No hard colour edges.** Every light fades out (masks on the hero and page-head glows), and bands fade in and out. A colour that stops at a straight line looks unfinished.
 - **Type:** Big Shoulders Display (headlines, crisp, weight 800 to 900, sentence case), Schibsted Grotesk (text), Martian Mono (badge, nav, kickers, meta). All self-hosted and preloaded, Latin subsets, OFL, credited on /privacy/. Pirata One (closer to the logo) was tried on 1 Nov and rejected by Stefanos; keep Big Shoulders.
-- **Components:** a pill badge ("Coremosh software studios") with an amber light; pill nav with the current page filled amber; rounded amber buttons and outlined secondary buttons; rounded panels with hairline borders for project media, services (with small line icons), features, facts and the form; a numbered timeline for how we work; a lit panel for the closing call.
+- **Components:** a pill badge ("Coremosh software studios") with an amber light; pill nav with the current page filled amber; rounded amber buttons and outlined secondary buttons; rounded panels with hairline borders for project media, services (with small line icons), what-we-built cards and the form; a numbered timeline for how we work; a lit contact panel; the topic field as amber radio pills. The header is sticky and turns solid with a blur once the page scrolls.
 - **Footer:** one quiet line on the dark page, like the Tilt Guild site: "© 2026 Coremosh software studios" and the links Work, Design, About, Contact, Privacy. No logo, no amber, no motto (Stefanos, 2 Nov: the big amber footer was too much).
 - Kickers use music words sparingly (Latest releases, The lineup, Setlist, Encore). Numbering only for real sequences.
 - The hero figure "Pit" is a Hairline figure (`@lucasmarkes/hairline`, MIT), no caption. Keep its licence notice; credit on /privacy/.
@@ -40,7 +41,7 @@ Only where it does something:
 - Pit, the Hairline figure.
 - The product loops (two-device on screens 600px and wider, phone-only crop on phones): play only on screen, never on their own under reduced motion, with a pause button.
 - "How we work" plays once, the first time it is on screen: 01 lights, the line draws to 02, and so on to 04, then all settle (`js/motion.js` adds `.is-armed` and `.is-on`).
-- A light follows the cursor across cards and panels (`.service`, `.print`, `.features li`, `.call-panel`, `.form-sheet`, `.facts`): a soft amber glow inside and a brighter edge near the pointer. `js/motion.js` adds `.spot` and a `.spot-light` span, only with a mouse or pen. The hero's stage light leans toward the cursor (registered `--hx`/`--hy`).
+- A light follows the cursor across cards and panels (`.service`, `.print`, `.call-panel`; add `.built li` or others in `js/motion.js` if wanted): a soft amber glow inside and a brighter edge near the pointer. `js/motion.js` adds `.spot` and a `.spot-light` span, only with a mouse or pen. The hero's stage light leans toward the cursor (registered `--hx`/`--hy`).
 - Short hover moves: panels lift 2px, videos zoom 1.5%, arrows nudge.
 Nothing else: no scroll effects, no tickers, no moving grain. With reduced motion, nothing plays on its own (the cursor light still follows the pointer).
 - The hero headline is sized to its own column (`container-type` on `.hero-copy`, `cqi` units), so it never runs into Pit at any screen width.
@@ -50,9 +51,9 @@ Nothing else: no scroll effects, no tickers, no moving grain. With reduced motio
 - Page bodies live in `_src/pages/*.html`, each with a header comment (path, title, description, nav). The shared header and footer are in `_src/layout.html`.
 - `python3 scripts/build.py` writes every page to the repo root (`index.html`, `work/index.html`, ...). Edit `_src`, never the built files, then build.
 - The stylesheet and every script in `js/` carry a version tag from their contents (`{{v_css}}`, `{{v_<name>}}`), so browsers never mix new pages with old cached files.
-- `{{include:name}}` in a page pulls in `_src/partials/name.html`. The project blocks on Home and Work are one partial, `_src/partials/projects.html`.
+- `{{include:name}}` in a page pulls in `_src/partials/name.html` (none in use now).
 - Pit: the figure is `_figures/pit.js`; `build.py` bundles it with the engine (`_figures/hairline-kernel.js`, unchanged, MIT notice from `_figures/HAIRLINE-LICENSE`) and `_figures/host.js` into `js/pit.js`. Check a change with the Hairline look tool before building.
-- Loops: `python3 scripts/make_loop.py <desktop-full.png> <phone-full.png> <name>` writes `media/<name>.mp4`, its poster and 16:10 images. The phone-only version is cropped from it with ffmpeg `crop=420:710:1145:95` into `media/<name>-phone.mp4` plus a poster. In the projects partial the posters load only as they come near (`data-poster`, handled by `js/loops.js`).
+- Loops: `python3 scripts/make_loop.py <desktop-full.png> <phone-full.png> <name>` writes `media/<name>.mp4`, its poster and 16:10 images. The phone-only version is cropped from it with ffmpeg `crop=420:710:1145:95` into `media/<name>-phone.mp4` plus a poster. On the page the posters load only as they come near (`data-poster`, handled by `js/loops.js`). The 16:10 images are not used now.
 - Design examples live in `media/design/` (the Tilt Guild release cards).
 
 ## Local preview

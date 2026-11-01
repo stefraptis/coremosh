@@ -1,6 +1,6 @@
 # coremosh.com
 
-The website of Coremosh, a software studio for music.
+The website of Coremosh software studios: one page, plus Privacy and a 404 page.
 
 - Edit page text in `_src/pages/`, the shared header and footer in `_src/layout.html`, styles in `css/site.css`.
 - Build with `python3 scripts/build.py` (writes the pages to the repo root).

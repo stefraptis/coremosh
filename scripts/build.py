@@ -23,7 +23,7 @@ import re
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SRC = ROOT / "_src"
-NAV_KEYS = ["work", "design", "about", "contact"]
+NAV_KEYS = []  # one page: the menu links to sections, js/motion.js marks the one in view
 
 
 def short_hash(path):
