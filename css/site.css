@@ -79,17 +79,29 @@ h3 { font-size: clamp(1.75rem, 2.6vw, 2.25rem); }
 .top-row { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 92px; }
 .mark { display: block; flex: none; }
 .mark img { height: 50px; width: auto; }
-.nav { list-style: none; margin: 0; padding: 4px; display: flex; gap: 2px; border: 1px solid var(--border); border-radius: 999px; background: rgba(239, 233, 222, 0.025); }
-.nav a { display: inline-flex; align-items: center; min-height: 40px; padding: 0 16px; border-radius: 999px; text-decoration: none; color: var(--muted); font-family: var(--mono); font-size: 0.75rem; font-weight: 500; transition: color 150ms ease-out, background-color 150ms ease-out; }
-.nav a:hover { color: var(--text); background: rgba(239, 233, 222, 0.06); }
-.nav a[aria-current] { color: var(--bg); background: var(--amber); }
+.nav { list-style: none; margin: 0; padding: 0; display: flex; gap: clamp(4px, 1.4vw, 14px); }
+/* Each link carries a hairline of stage light, like the lit edge of the cards:
+   brightest in the middle, fading out at both ends. It draws out from the
+   centre on hover and stays lit under the section in view. */
+.nav a { position: relative; display: inline-flex; align-items: center; min-height: 44px; padding: 0 12px; text-decoration: none; color: var(--muted); font-family: var(--mono); font-size: 0.75rem; font-weight: 500; transition: color 200ms ease-out; }
+.nav a::before, .nav a::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 6px; pointer-events: none;
+  transform: scaleX(0); opacity: 0; transition: transform 350ms var(--ease), opacity 250ms ease-out;
+}
+.nav a::after { height: 1px; background: linear-gradient(90deg, rgba(242, 163, 58, 0), var(--amber) 50%, rgba(242, 163, 58, 0)); }
+.nav a::before { height: 10px; bottom: 2px; background: radial-gradient(50% 50% at 50% 50%, rgba(242, 163, 58, 0.6), rgba(242, 163, 58, 0)); filter: blur(4px); }
+.nav a:hover, .nav a:focus-visible { color: var(--text); }
+.nav a:hover::before, .nav a:hover::after, .nav a:focus-visible::after { transform: scaleX(1); opacity: 1; }
+.nav a[aria-current] { color: var(--text); }
+.nav a[aria-current]::after { transform: scaleX(1); opacity: 1; }
+.nav a[aria-current]::before { transform: scaleX(1); opacity: 0.7; }
 @media (max-width: 560px) {
   .top-row { min-height: 76px; gap: 10px; }
   .mark img { height: 30px; }
-  .nav { padding: 3px; }
-  .nav a { padding: 0 9px; font-size: 0.6875rem; min-height: 38px; }
+  .nav { gap: 0; }
+  .nav a { padding: 0 8px; font-size: 0.6875rem; }
 }
-@media (max-width: 370px) { .mark img { height: 24px; } .nav a { padding: 0 7px; } }
+@media (max-width: 370px) { .mark img { height: 24px; } .nav a { padding: 0 6px; } }
 
 /* Buttons and links */
 
