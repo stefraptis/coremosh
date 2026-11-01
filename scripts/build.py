@@ -23,7 +23,7 @@ import re
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SRC = ROOT / "_src"
-NAV_KEYS = ["work", "analytics", "studio", "contact"]
+NAV_KEYS = ["work", "design", "analytics", "studio", "contact"]
 
 
 def short_hash(path):
@@ -64,8 +64,8 @@ def main():
     build_figure()
     layout = (SRC / "layout.html").read_text(encoding="utf-8")
     v_css = short_hash(ROOT / "css" / "site.css")
-    v_pit = short_hash(ROOT / "js" / "pit.js")
-    v_loops = short_hash(ROOT / "js" / "loops.js")
+    # Every script in js/ gets a version tag from its contents: {{v_loops}}, {{v_story}}, ...
+    versions = {"v_" + js.stem: short_hash(js) for js in sorted((ROOT / "js").glob("*.js"))}
     built = []
     for page in sorted((SRC / "pages").glob("*.html")):
         meta, body = parse(page)
@@ -78,8 +78,7 @@ def main():
             "path": meta["path"],
             "nav": nav or "none",
             "v_css": v_css,
-            "v_pit": v_pit,
-            "v_loops": v_loops,
+            **versions,
         }
         for key in NAV_KEYS:
             values[f"cur_{key}"] = ' aria-current="page"' if nav == key else ""

@@ -31,9 +31,46 @@ nav: analytics
   <div class="wrap">
     <div class="section-head">
       <h2 id="ex">An example</h2>
-      <p>Three of the questions above, answered for one band's year.</p>
+      <p>Three of the questions above, answered for one band's year. One answer per screen, the way we build them.</p>
     </div>
-    {{include:dashboard}}
+    <div class="stories">
+      <figure class="story story-bars" data-chart='{"kind":"rows","labels":["Jan Athens","Feb Thessaloniki","Mar Athens","Apr Patras","May Volos","Jun Athens","Sep Larissa","Oct Athens"],"values":[180,90,260,-40,120,310,-15,230],"hi":[0,2,5,7],"valueLabels":["€180","€90","€260","−€40","€120","€310","−€15","€230"],"counter":{"value":980,"prefix":"€"},"note":{"text":"Every Athens night paid. / Two trips lost money.","at":5}}'>
+        <figcaption>
+          <p class="story-kicker">What each show earned after costs. Example only, made-up numbers.</p>
+          <h3 class="story-title">Athens paid for the year.</h3>
+          <p class="story-counter"><span class="story-counter-value">€980</span> <span class="story-counter-of">from the four Athens nights, of €1,135 the eight shows earned.</span></p>
+        </figcaption>
+        <div class="story-plot"></div>
+        <div class="story-foot">
+          <details class="story-table"><summary>Show as a table</summary><table><caption>What each show earned after costs, in euros</caption><thead><tr><th scope="col">Show</th><th scope="col">After costs</th></tr></thead><tbody><tr><th scope="row">Jan Athens</th><td>€180</td></tr><tr><th scope="row">Feb Thessaloniki</th><td>€90</td></tr><tr><th scope="row">Mar Athens</th><td>€260</td></tr><tr><th scope="row">Apr Patras</th><td>−€40</td></tr><tr><th scope="row">May Volos</th><td>€120</td></tr><tr><th scope="row">Jun Athens</th><td>€310</td></tr><tr><th scope="row">Sep Larissa</th><td>−€15</td></tr><tr><th scope="row">Oct Athens</th><td>€230</td></tr></tbody></table></details>
+          <button class="story-again" type="button" hidden>Play again</button>
+        </div>
+      </figure>
+      <figure class="story story-line" data-chart='{"kind":"line","labels":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"values":[8.1,7.6,11.9,9.4,10.2,16.8,13.1,11.0,12.4,15.2,13.9,14.6],"peak":5,"peakLabel":"16.8k"}'>
+        <figcaption>
+          <p class="story-kicker">Streams per month, in thousands. Example only, made-up numbers.</p>
+          <h3 class="story-title">Streams peaked in June.</h3>
+          <p class="story-counter"><span class="story-counter-of">16.8k streams, in the month of the Athens show that earned the most.</span></p>
+        </figcaption>
+        <div class="story-plot"></div>
+        <div class="story-foot">
+          <details class="story-table"><summary>Show as a table</summary><table><caption>Streams per month, in thousands</caption><thead><tr><th scope="col">Month</th><th scope="col">Streams</th></tr></thead><tbody><tr><th scope="row">Jan</th><td>8.1k (show)</td></tr><tr><th scope="row">Feb</th><td>7.6k</td></tr><tr><th scope="row">Mar</th><td>11.9k (show)</td></tr><tr><th scope="row">Apr</th><td>9.4k</td></tr><tr><th scope="row">May</th><td>10.2k (show)</td></tr><tr><th scope="row">Jun</th><td>16.8k (show)</td></tr><tr><th scope="row">Jul</th><td>13.1k</td></tr><tr><th scope="row">Aug</th><td>11.0k</td></tr><tr><th scope="row">Sep</th><td>12.4k (show)</td></tr><tr><th scope="row">Oct</th><td>15.2k (show)</td></tr><tr><th scope="row">Nov</th><td>13.9k</td></tr><tr><th scope="row">Dec</th><td>14.6k</td></tr></tbody></table></details>
+          <button class="story-again" type="button" hidden>Play again</button>
+        </div>
+      </figure>
+      <figure class="story story-bars" data-chart='{"kind":"cols","labels":["S","M","L","XL","XXL"],"values":[18,46,39,21,7],"hi":[1],"valueLabels":["18","46","39","21","7"],"counter":{"value":46},"note":{"text":"Order more M. / Fewer XXL.","at":1}}'>
+        <figcaption>
+          <p class="story-kicker">Shirts sold by size. Example only, made-up numbers.</p>
+          <h3 class="story-title">M is the size that sells.</h3>
+          <p class="story-counter"><span class="story-counter-value">46</span> <span class="story-counter-of">M shirts sold, of 131 in all sizes.</span></p>
+        </figcaption>
+        <div class="story-plot"></div>
+        <div class="story-foot">
+          <details class="story-table"><summary>Show as a table</summary><table><caption>Shirts sold by size</caption><thead><tr><th scope="col">Size</th><th scope="col">Shirts</th></tr></thead><tbody><tr><th scope="row">S</th><td>18</td></tr><tr><th scope="row">M</th><td>46</td></tr><tr><th scope="row">L</th><td>39</td></tr><tr><th scope="row">XL</th><td>21</td></tr><tr><th scope="row">XXL</th><td>7</td></tr></tbody></table></details>
+          <button class="story-again" type="button" hidden>Play again</button>
+        </div>
+      </figure>
+    </div>
   </div>
 </section>
 
@@ -72,3 +109,4 @@ nav: analytics
     </div>
   </div>
 </section>
+<script src="/js/story.js?v={{v_story}}" defer></script>
