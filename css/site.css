@@ -194,6 +194,7 @@ h3 {
 .work-item { display: grid; gap: 24px; }
 @media (min-width: 900px) {
   .work-item { grid-template-columns: 7fr 5fr; gap: 48px; align-items: end; }
+  .work-item:nth-child(even) { grid-template-columns: 5fr 7fr; }
   .work-item:nth-child(even) .work-media { order: 2; }
 }
 .work-media {

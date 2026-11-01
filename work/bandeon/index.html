@@ -16,7 +16,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preload" href="/fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/css/site.css?v=0bda8db3ca">
+<link rel="stylesheet" href="/css/site.css?v=eff695ca4f">
 </head>
 <body class="page-work">
 <a class="skip" href="#main">Skip to content</a>
@@ -50,7 +50,12 @@
 
 <section class="section section-first">
   <div class="wrap">
-    <div class="case-media">Screen loop: availability, setlist, stage mode</div>
+    <figure class="case-media">
+      <video class="loop" muted loop playsinline preload="none" poster="/media/bandeon-poster.webp" width="1600" height="900" aria-label="Bandeon on a laptop and a phone: a band's week, the next rehearsal with who is coming, and the band's money.">
+        <source src="/media/bandeon.mp4" type="video/mp4">
+      </video>
+      <button class="loop-toggle" type="button" hidden>Pause</button>
+    </figure>
   </div>
 </section>
 
@@ -107,6 +112,7 @@
     <a class="link" href="/work/tilt-guild/">Next: Tilt Guild</a>
   </div>
 </section>
+<script src="/js/loops.js?v=8668c818a8" defer></script>
 
 </main>
 <footer class="foot">

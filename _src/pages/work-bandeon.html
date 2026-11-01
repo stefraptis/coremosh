@@ -20,7 +20,12 @@ nav: work
 
 <section class="section section-first">
   <div class="wrap">
-    <div class="case-media">Screen loop: availability, setlist, stage mode</div>
+    <figure class="case-media">
+      <video class="loop" muted loop playsinline preload="none" poster="/media/bandeon-poster.webp" width="1600" height="900" aria-label="Bandeon on a laptop and a phone: a band's week, the next rehearsal with who is coming, and the band's money.">
+        <source src="/media/bandeon.mp4" type="video/mp4">
+      </video>
+      <button class="loop-toggle" type="button" hidden>Pause</button>
+    </figure>
   </div>
 </section>
 
@@ -77,3 +82,4 @@ nav: work
     <a class="link" href="/work/tilt-guild/">Next: Tilt Guild</a>
   </div>
 </section>
+<script src="/js/loops.js?v={{v_loops}}" defer></script>
