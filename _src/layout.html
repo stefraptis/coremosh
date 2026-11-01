@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{title_full}}</title>
+<meta name="description" content="{{description}}">
+<link rel="canonical" href="https://www.coremosh.com{{path}}">
+<meta name="theme-color" content="#171513">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Coremosh">
+<meta property="og:title" content="{{title_full}}">
+<meta property="og:description" content="{{description}}">
+<meta property="og:url" content="https://www.coremosh.com{{path}}">
+<link rel="preload" href="/fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/site.css?v={{v_css}}">
+</head>
+<body class="page-{{nav}}">
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap top-row">
+    <a class="mark" href="/" aria-label="Coremosh, home">coremosh</a>
+    <nav aria-label="Main">
+      <ul class="nav">
+        <li><a href="/work/"{{cur_work}}>Work</a></li>
+        <li><a href="/analytics/"{{cur_analytics}}>Analytics</a></li>
+        <li><a href="/studio/"{{cur_studio}}>Studio</a></li>
+        <li><a href="/contact/"{{cur_contact}}>Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main">
+{{body}}
+</main>
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div>
+      <p class="foot-mark">coremosh</p>
+      <p class="foot-line">Software for music. Apps, websites and analytics for bands, artists and labels.</p>
+    </div>
+    <ul class="foot-links">
+      <li><a href="/work/">Work</a></li>
+      <li><a href="/analytics/">Analytics</a></li>
+      <li><a href="/studio/">Studio</a></li>
+      <li><a href="/contact/">Contact</a></li>
+      <li><a href="/privacy/">Privacy and credits</a></li>
+    </ul>
+    <p class="foot-copy">&copy; 2026 Coremosh</p>
+  </div>
+</footer>
+</body>
+</html>
