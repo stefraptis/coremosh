@@ -27,6 +27,10 @@ Live address: https://www.coremosh.com (coremosh.com redirects there). Hosted on
 - Page bodies live in `_src/pages/*.html`, each with a header comment (path, title, description, nav). The shared header and footer are in `_src/layout.html`.
 - `python3 scripts/build.py` writes every page to the repo root (`index.html`, `work/index.html`, ...). Edit `_src`, never the built files, then build.
 - The stylesheet link carries a version tag from its contents, so browsers never mix new pages with an old cached stylesheet.
+- `{{include:name}}` in a page pulls in `_src/partials/name.html`.
+- Pit: the figure is `_figures/pit.js`; `build.py` bundles it with the engine (`_figures/hairline-kernel.js`, unchanged, MIT notice from `_figures/HAIRLINE-LICENSE`) and `_figures/host.js` into `js/pit.js`. Check a change with the Hairline look tool before building.
+- Case-study loops and work images: `python3 scripts/make_loop.py <desktop-full.png> <phone-full.png> <name>` writes `media/<name>.mp4`, its poster and the 16:10 work images from two full-page screenshots. `js/loops.js` plays them only on screen, never under reduced motion, with a pause button.
+- The Analytics example: `python3 scripts/make_dashboard.py` writes `_src/partials/dashboard.html` (made-up numbers, labelled as such).
 
 ## Budgets
 

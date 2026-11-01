@@ -65,6 +65,7 @@ def main():
     layout = (SRC / "layout.html").read_text(encoding="utf-8")
     v_css = short_hash(ROOT / "css" / "site.css")
     v_pit = short_hash(ROOT / "js" / "pit.js")
+    v_loops = short_hash(ROOT / "js" / "loops.js")
     built = []
     for page in sorted((SRC / "pages").glob("*.html")):
         meta, body = parse(page)
@@ -78,9 +79,12 @@ def main():
             "nav": nav or "none",
             "v_css": v_css,
             "v_pit": v_pit,
+            "v_loops": v_loops,
         }
         for key in NAV_KEYS:
             values[f"cur_{key}"] = ' aria-current="page"' if nav == key else ""
+        body = re.sub(r"\{\{include:([\w-]+)\}\}",
+                      lambda m: (SRC / "partials" / (m.group(1) + ".html")).read_text(encoding="utf-8"), body)
         html = layout.replace("{{body}}", body)
         for key, value in values.items():
             html = html.replace("{{" + key + "}}", value)

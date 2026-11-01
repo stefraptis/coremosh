@@ -20,7 +20,12 @@ nav: work
 
 <section class="section section-first">
   <div class="wrap">
-    <div class="case-media">Scroll loop: home page, releases, merch</div>
+    <figure class="case-media">
+      <video class="loop" muted loop playsinline preload="none" poster="/media/tilt-guild-poster.webp" width="1600" height="900" aria-label="The Tilt Guild home page scrolling on a laptop and a phone: releases, merch and live photos.">
+        <source src="/media/tilt-guild.mp4" type="video/mp4">
+      </video>
+      <button class="loop-toggle" type="button" hidden>Pause</button>
+    </figure>
   </div>
 </section>
 
@@ -73,3 +78,4 @@ nav: work
     <a class="link" href="/work/bandeon/">Next: Bandeon</a>
   </div>
 </section>
+<script src="/js/loops.js?v={{v_loops}}" defer></script>
