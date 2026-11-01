@@ -6,7 +6,7 @@
 <title>Privacy and credits | Coremosh</title>
 <meta name="description" content="What coremosh.com keeps about visitors (almost nothing), and the work this site is built on.">
 <link rel="canonical" href="https://www.coremosh.com/privacy/">
-<meta name="theme-color" content="#0a0a0a">
+<meta name="theme-color" content="#0d0c0b">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Coremosh">
 <meta property="og:title" content="Privacy and credits | Coremosh">
@@ -15,11 +15,14 @@
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="preload" href="/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/css/site.css?v=fd0438a192">
+<link rel="preload" href="/fonts/big-shoulders-display.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/martian-mono.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/site.css?v=73c84a114a">
 </head>
 <body class="page-privacy">
 <a class="skip" href="#main">Skip to content</a>
+<svg class="sr-only" aria-hidden="true" focusable="false"><filter id="worn" x="-2%" y="-6%" width="104%" height="112%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4" result="w"/><feDisplacementMap in="SourceGraphic" in2="w" scale="5" xChannelSelector="R" yChannelSelector="G" result="d"/><feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="2" seed="9" result="h"/><feColorMatrix in="h" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  16 0 0 0 -4.6" result="holes"/><feComposite in="d" in2="holes" operator="in"/></filter></svg>
 <header class="top">
   <div class="wrap top-row">
     <a class="mark" href="/"><img src="/brand/coremosh-logo.svg" width="1372" height="507" alt="Coremosh, home"></a>
@@ -36,21 +39,21 @@
 <main id="main">
 <section class="page-head">
   <div class="wrap">
-    <h1>Privacy and credits</h1>
+    <h1 class="worn">Privacy and credits</h1>
     <p class="lead">This site sets no cookies, runs no analytics and loads nothing from other sites while you read it.</p>
   </div>
 </section>
 
 <section class="section">
   <div class="wrap text-block">
-    <h2>The contact form</h2>
+    <h2 class="worn">The contact form</h2>
     <p>When you send a message, your name, email and message go to us through Formspree, a form service. We use them only to reply to you, and delete them once the conversation is over. You can ask us to delete them sooner through the same form.</p>
 
-    <h2>Hosting</h2>
+    <h2 class="worn">Hosting</h2>
     <p>The site is hosted on GitHub Pages. Like any web server, GitHub may record technical details of each visit, such as the IP address, for security. We do not see or use them.</p>
 
-    <h2>Credits</h2>
-    <p>Type: Archivo by Omnibus-Type (The Archivo Project Authors), under the SIL Open Font License.</p>
+    <h2 class="worn">Credits</h2>
+    <p>Type: Big Shoulders Display (The Big Shoulders Project Authors), Schibsted Grotesk (The Schibsted Grotesk Project Authors) and Martian Mono (The Martian Mono Project Authors, Evil Martians), all under the SIL Open Font License.</p>
     <p>The figure on the home page is built on Hairline by Lucas Marques, under the MIT License.</p>
   </div>
 </section>
@@ -59,7 +62,7 @@
 <footer class="foot">
   <div class="wrap">
     <div class="foot-top">
-      <p class="foot-line">We build the core. You make the noise.</p>
+      <p class="foot-line worn">We build the core. You make the noise.</p>
       <ul class="foot-links">
         <li><a href="/work/">Work</a></li>
         <li><a href="/studio/">Studio</a></li>
@@ -67,7 +70,7 @@
         <li><a href="/contact/">Contact</a></li>
       </ul>
     </div>
-    <img class="foot-logo" src="/brand/coremosh-logo.svg" width="1372" height="507" alt="Coremosh" loading="lazy">
+    <img class="foot-logo" src="/brand/coremosh-logo-dark.svg" width="1372" height="507" alt="Coremosh" loading="lazy">
     <div class="foot-bottom">
       <span>&copy; 2026 Coremosh</span>
       <a href="/privacy/">Privacy and credits</a>

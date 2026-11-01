@@ -18,22 +18,26 @@ Live address: https://www.coremosh.com (coremosh.com redirects there). Hosted on
 - Bandeon: studios are hidden in the app, so the site does not mention them.
 - Plain verbs, sentence case, no em dashes, no all-caps labels.
 
-## Look (redesign, 1 Nov 2026)
+## Look: grunge on a modern grid (1 Nov 2026)
 
-- The Coremosh logo leads: a metal-style wordmark, in the header (52px tall on desktop) and full width in the footer. `brand/coremosh-logo.svg` (light, #f4f2ee) and `brand/coremosh-logo-dark.svg` are vector traces of Stefanos's `brand-logo/` JPEGs. Keep the logo as is; never redraw it.
-- Black and white. Tokens in `:root` of `css/site.css`: bg `#0a0a0a`, text `#f4f2ee`, muted `#9a968f`, line `#262626`, screen panel `#181413` (the colour the product loops are filmed on, so they sit seamlessly), amber `#f2a33a`.
-- Amber stays small: the current nav item, focus rings, and the one lit figure in Pit. Buttons are white pills; secondary buttons are outlined.
-- One typeface, Archivo (self-hosted, latin, weight 100 to 900, OFL, credited on /privacy/), set quietly: weight 500 headings with tight tracking, 400 text. The logo carries the character.
-- Generous space, left-aligned, thin rules. Big product media on rounded panels. Numbering only for real sequences.
-- The hero figure "Pit" is a Hairline figure (`@lucasmarkes/hairline`, MIT). No caption under it. Keep its licence notice; credit on /privacy/.
+The idea is the rehearsal-room wall: a black floor with dust and a spotlight, photocopied paper sheets with torn edges, amber gaffer tape, worn ink on the big words. Underneath, a strict grid, plain text and quiet controls, so it reads as designed rather than messy.
+
+- **Logo leads:** a metal-style wordmark. `brand/coremosh-logo.svg` (light, header) and `brand/coremosh-logo-dark.svg` (black, on the amber footer) are vector traces of Stefanos's `brand-logo/` JPEGs. Never redraw it.
+- **Colours** (tokens in `:root` of `css/site.css`): floor `#0d0c0b`, bone `#efe9de` text, dust `#a39d93` quiet text; paper `#ece6d9` and sheet `#f6f2e9` with ink `#161412` and smudge `#5b554c`; amber `#f2a33a` for tape, buttons, the stamp, the current nav item and the footer; screen panel `#181413` (the colour the product loops are filmed on).
+- **Type:** Big Shoulders Display (headlines, weight 800 to 900, sentence case), Schibsted Grotesk (text), Martian Mono (labels, nav, buttons, meta). All self-hosted and preloaded, Latin subsets, OFL, credited on /privacy/.
+- **Textures and marks**, all CSS or inline SVG: dust on the floor and speckle on paper (`--dust-tex`, `--speckle`, `--blotch`); torn edges (`--torn-top`, `--torn-bottom`) on `.paper` sections and the footer; the worn-ink filter `#worn` (inline in `_src/layout.html`) on big headings via `class="worn"`; `.tape` behind a word; `.print` for anything taped to the wall (paper mat, two tape strips, slightly crooked, straightens on hover); `.kicker` mono labels with a small square; buttons are amber blocks with a hard offset shadow.
+- **Sections alternate** floor and paper. Kickers use music words sparingly (Latest releases, The lineup, Setlist, Encore).
+- Numbering only for real sequences (the setlist of how we work).
+- The hero figure "Pit" is a Hairline figure (`@lucasmarkes/hairline`, MIT), no caption, with a static "2026" stamp beside it. Keep its licence notice; credit on /privacy/.
 
 ## Motion
 
-Only where it shows something:
-- Pit, the Hairline figure in the hero.
+Only where it does something:
+- One load sequence on the home page: the motto lines are slapped up, the tape goes on under "noise.", the stamp comes down, then the lead and buttons settle (about 1.5 s, CSS only, scoped to `.page-home`).
+- Pit, the Hairline figure.
 - The product loops (two-device on screens 600px and wider, phone-only crop on phones): play only on screen, never on their own under reduced motion, with a pause button.
-- Short hover transitions (150ms).
-Nothing else moves: no scroll effects, no intros, no tickers, no grain.
+- Short hover moves: prints straighten, buttons press into their shadow, arrows nudge.
+Nothing else: no scroll effects, no tickers, no moving grain. With reduced motion, nothing moves.
 
 ## How pages are made
 
@@ -51,4 +55,4 @@ Stefanos previews on his laptop with `serve.cmd` (runs `node scripts/serve.mjs`,
 
 ## Budgets
 
-First paint under 1.5 s on a phone over 4G, under 100 KB of JavaScript per page, no cookies, nothing loaded from other sites while reading (videos, fonts and figures are self-hosted).
+First paint under 1.5 s on a phone over 4G, under 100 KB of JavaScript per page, no cookies, nothing loaded from other sites while reading (videos, fonts, textures and figures are self-hosted).

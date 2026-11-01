@@ -6,7 +6,7 @@
 <title>Coremosh</title>
 <meta name="description" content="Coremosh is a software studio for music. Apps, websites and design for bands, artists and labels, and websites for anyone with something to show.">
 <link rel="canonical" href="https://www.coremosh.com/">
-<meta name="theme-color" content="#0a0a0a">
+<meta name="theme-color" content="#0d0c0b">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Coremosh">
 <meta property="og:title" content="Coremosh">
@@ -15,11 +15,14 @@
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="preload" href="/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/css/site.css?v=fd0438a192">
+<link rel="preload" href="/fonts/big-shoulders-display.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/martian-mono.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/site.css?v=73c84a114a">
 </head>
 <body class="page-home">
 <a class="skip" href="#main">Skip to content</a>
+<svg class="sr-only" aria-hidden="true" focusable="false"><filter id="worn" x="-2%" y="-6%" width="104%" height="112%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4" result="w"/><feDisplacementMap in="SourceGraphic" in2="w" scale="5" xChannelSelector="R" yChannelSelector="G" result="d"/><feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="2" seed="9" result="h"/><feColorMatrix in="h" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  16 0 0 0 -4.6" result="holes"/><feComposite in="d" in2="holes" operator="in"/></filter></svg>
 <header class="top">
   <div class="wrap top-row">
     <a class="mark" href="/"><img src="/brand/coremosh-logo.svg" width="1372" height="507" alt="Coremosh, home"></a>
@@ -36,9 +39,11 @@
 <main id="main">
 <section class="hero">
   <div class="wrap hero-grid">
-    <div>
-      <p class="label">A software studio for music</p>
-      <h1 class="display"><span>We build the core.</span> <span>You make the noise.</span></h1>
+    <div class="hero-head">
+      <p class="kicker">A software studio for music</p>
+      <h1 class="display worn"><span class="line"><span class="chunk">We build</span> <span class="chunk">the core.</span></span> <span class="line"><span class="chunk">You make</span> <span class="chunk">the <span class="tape">noise.</span></span></span></h1>
+    </div>
+    <div class="hero-copy">
       <p class="lead">Apps, websites and design for bands, artists and labels. Websites for anyone else with something to show.</p>
       <div class="actions">
         <a class="btn" href="/contact/">Get in touch</a>
@@ -47,56 +52,66 @@
     </div>
     <figure class="pit-frame">
       <div class="pit-stage" data-figure="pit"></div>
+      <svg class="stamp worn" viewBox="0 0 160 160" aria-hidden="true">
+        <defs><path id="ring" d="M80 80m-60 0a60 60 0 1 1 120 0a60 60 0 1 1-120 0"/></defs>
+        <circle cx="80" cy="80" r="76" fill="none" stroke="currentColor" stroke-width="3"/>
+        <circle cx="80" cy="80" r="45" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <text><textPath href="#ring" startOffset="0">apps / websites / design / built loud /</textPath></text>
+        <text class="big" x="80" y="91" text-anchor="middle">2026</text>
+      </svg>
     </figure>
   </div>
 </section>
 
 <section class="section" aria-labelledby="work">
   <div class="wrap section-top">
-    <h2 id="work">Selected work</h2>
+    <div>
+      <p class="kicker">Latest releases</p>
+      <h2 id="work" class="worn">Selected work</h2>
+    </div>
     <a class="arrow-link" href="/work/">All work</a>
   </div>
 <div class="wrap projects">
   <article class="project">
-    <figure class="case-media project-media for-wide">
-      <video class="loop" muted loop playsinline preload="none" data-poster="/media/bandeon-poster.webp" width="1600" height="900" aria-label="Bandeon on a laptop and a phone: a band's week, the next rehearsal with who is coming, and the band's money.">
-        <source src="/media/bandeon.mp4" type="video/mp4">
-      </video>
-      <button class="loop-toggle" type="button" hidden>Pause</button>
-    </figure>
-    <figure class="case-media project-media for-phone">
-      <video class="loop" muted loop playsinline preload="none" data-poster="/media/bandeon-phone-poster.webp" width="420" height="710" aria-label="Bandeon on a phone: the band's money, what each member owes and the band's fund.">
-        <source src="/media/bandeon-phone.mp4" type="video/mp4">
-      </video>
-      <button class="loop-toggle" type="button" hidden>Pause</button>
-    </figure>
+    <div class="print">
+      <figure class="case-media for-wide">
+        <video class="loop" muted loop playsinline preload="none" data-poster="/media/bandeon-poster.webp" width="1600" height="900" aria-label="Bandeon on a laptop and a phone: a band's week, the next rehearsal with who is coming, and the band's money.">
+          <source src="/media/bandeon.mp4" type="video/mp4">
+        </video>
+        <button class="loop-toggle" type="button" hidden>Pause</button>
+      </figure>
+      <figure class="case-media for-phone">
+        <video class="loop" muted loop playsinline preload="none" data-poster="/media/bandeon-phone-poster.webp" width="420" height="710" aria-label="Bandeon on a phone: the band's money, what each member owes and the band's fund.">
+          <source src="/media/bandeon-phone.mp4" type="video/mp4">
+        </video>
+        <button class="loop-toggle" type="button" hidden>Pause</button>
+      </figure>
+    </div>
     <div class="project-info">
-      <div>
-        <h3><a href="/work/bandeon/">Bandeon</a></h3>
-        <p class="project-meta">Web app, 2026</p>
-      </div>
+      <p class="meta"><span>Web app</span><span>2026</span></p>
+      <h3 class="worn"><a href="/work/bandeon/">Bandeon</a></h3>
       <p>A workspace for bands and solo artists: when everyone is free, what we play, and who owes what. One app on every member's phone.</p>
       <a class="arrow-link" href="/work/bandeon/">View project</a>
     </div>
   </article>
   <article class="project">
-    <figure class="case-media project-media for-wide">
-      <video class="loop" muted loop playsinline preload="none" data-poster="/media/tilt-guild-poster.webp" width="1600" height="900" aria-label="The Tilt Guild home page scrolling on a laptop and a phone: releases, merch and live photos.">
-        <source src="/media/tilt-guild.mp4" type="video/mp4">
-      </video>
-      <button class="loop-toggle" type="button" hidden>Pause</button>
-    </figure>
-    <figure class="case-media project-media for-phone">
-      <video class="loop" muted loop playsinline preload="none" data-poster="/media/tilt-guild-phone-poster.webp" width="420" height="710" aria-label="The Tilt Guild home page scrolling on a phone: releases, merch and live photos.">
-        <source src="/media/tilt-guild-phone.mp4" type="video/mp4">
-      </video>
-      <button class="loop-toggle" type="button" hidden>Pause</button>
-    </figure>
+    <div class="print">
+      <figure class="case-media for-wide">
+        <video class="loop" muted loop playsinline preload="none" data-poster="/media/tilt-guild-poster.webp" width="1600" height="900" aria-label="The Tilt Guild home page scrolling on a laptop and a phone: releases, merch and live photos.">
+          <source src="/media/tilt-guild.mp4" type="video/mp4">
+        </video>
+        <button class="loop-toggle" type="button" hidden>Pause</button>
+      </figure>
+      <figure class="case-media for-phone">
+        <video class="loop" muted loop playsinline preload="none" data-poster="/media/tilt-guild-phone-poster.webp" width="420" height="710" aria-label="The Tilt Guild home page scrolling on a phone: releases, merch and live photos.">
+          <source src="/media/tilt-guild-phone.mp4" type="video/mp4">
+        </video>
+        <button class="loop-toggle" type="button" hidden>Pause</button>
+      </figure>
+    </div>
     <div class="project-info">
-      <div>
-        <h3><a href="/work/tilt-guild/">Tilt Guild</a></h3>
-        <p class="project-meta">Website, 2026</p>
-      </div>
+      <p class="meta"><span>Website</span><span>2026</span></p>
+      <h3 class="worn"><a href="/work/tilt-guild/">Tilt Guild</a></h3>
       <p>The website of a rap metal band from Athens: releases, shows, merch, a giveaway and a press kit.</p>
       <a class="arrow-link" href="/work/tilt-guild/">View project</a>
     </div>
@@ -105,63 +120,67 @@
 
 </section>
 
-<section class="section" aria-labelledby="do">
+<section class="paper" aria-labelledby="do">
   <div class="wrap">
     <div class="section-top">
-      <h2 id="do">What we do</h2>
+      <div>
+        <p class="kicker">The lineup</p>
+        <h2 id="do" class="worn">What we do</h2>
+      </div>
     </div>
     <div class="services">
       <div class="service">
-        <h3>Apps</h3>
+        <h3 class="worn">Apps</h3>
         <p>For the way a band actually works: rehearsals, who can make it, setlists, money and merch. Built for the phone first, and quick on a weak signal.</p>
+        <p class="meta"><span>Bandeon</span></p>
       </div>
       <div class="service">
-        <h3>Websites</h3>
+        <h3 class="worn">Websites</h3>
         <p>For bands and artists, and for shops, venues, studios and small businesses outside music. Fast, clear, and easy for search engines to read.</p>
+        <p class="meta"><span>Tilt Guild</span></p>
       </div>
       <div class="service">
-        <h3>Design</h3>
+        <h3 class="worn">Design</h3>
         <p>Logos, album and single covers, posters for live shows, release cards, and the look of every site and app we build.</p>
+        <p class="meta"><span>Logos</span><span>Covers</span><span>Posters</span></p>
       </div>
     </div>
-  </div>
-</section>
 
-<section class="section statement">
-  <div class="wrap">
-    <p>A studio the way a game studio is one. <span class="dim">We design, build and run software, and music is where we started.</span></p>
-  </div>
-</section>
-
-<section class="section" aria-labelledby="how">
-  <div class="wrap">
-    <div class="section-top">
-      <h2 id="how">How we work</h2>
+    <div class="setlist-wrap">
+      <div>
+        <p class="kicker">How we work</p>
+        <h2 class="worn">A studio the way a game studio is one.</h2>
+        <p class="lead">We design, build and run software, and music is where we started. Four songs, every time.</p>
+      </div>
+      <div class="setlist">
+        <div class="setlist-head"><strong>Setlist</strong><span>Every project</span></div>
+        <ol class="steps">
+          <li>
+            <h3>Talk</h3>
+            <p>You tell us what gets in the way: the group chat, the spreadsheet, the gig nobody confirmed.</p>
+          </li>
+          <li>
+            <h3>Sketch</h3>
+            <p>We come back with a plan and a first screen you can try on your own phone.</p>
+          </li>
+          <li>
+            <h3>Build</h3>
+            <p>In small steps, each one working, each one tried by you before the next.</p>
+          </li>
+          <li>
+            <h3>Keep it running</h3>
+            <p>After launch we look after it: fast, secure and up to date.</p>
+          </li>
+        </ol>
+      </div>
     </div>
-    <ol class="steps">
-      <li>
-        <h3>Talk</h3>
-        <p>You tell us what gets in the way: the group chat, the spreadsheet, the gig nobody confirmed.</p>
-      </li>
-      <li>
-        <h3>Sketch</h3>
-        <p>We come back with a plan and a first screen you can try on your own phone.</p>
-      </li>
-      <li>
-        <h3>Build</h3>
-        <p>In small steps, each one working, each one tried by you before the next.</p>
-      </li>
-      <li>
-        <h3>Keep it running</h3>
-        <p>After launch we look after it: fast, secure and up to date.</p>
-      </li>
-    </ol>
   </div>
 </section>
 
 <section class="call" aria-labelledby="call">
   <div class="wrap">
-    <h2 id="call">Have something in mind?</h2>
+    <p class="kicker">Encore</p>
+    <h2 id="call" class="worn">Have something in mind?</h2>
     <p class="lead">Tell us about your band, your business or your idea. We read every message.</p>
     <div class="actions">
       <a class="btn" href="/contact/">Get in touch</a>
@@ -175,7 +194,7 @@
 <footer class="foot">
   <div class="wrap">
     <div class="foot-top">
-      <p class="foot-line">We build the core. You make the noise.</p>
+      <p class="foot-line worn">We build the core. You make the noise.</p>
       <ul class="foot-links">
         <li><a href="/work/">Work</a></li>
         <li><a href="/studio/">Studio</a></li>
@@ -183,7 +202,7 @@
         <li><a href="/contact/">Contact</a></li>
       </ul>
     </div>
-    <img class="foot-logo" src="/brand/coremosh-logo.svg" width="1372" height="507" alt="Coremosh" loading="lazy">
+    <img class="foot-logo" src="/brand/coremosh-logo-dark.svg" width="1372" height="507" alt="Coremosh" loading="lazy">
     <div class="foot-bottom">
       <span>&copy; 2026 Coremosh</span>
       <a href="/privacy/">Privacy and credits</a>
