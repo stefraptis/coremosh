@@ -32,6 +32,10 @@ Live address: https://www.coremosh.com (coremosh.com redirects there). Hosted on
 - Case-study loops and work images: `python3 scripts/make_loop.py <desktop-full.png> <phone-full.png> <name>` writes `media/<name>.mp4`, its poster and the 16:10 work images from two full-page screenshots. `js/loops.js` plays them only on screen, never under reduced motion, with a pause button.
 - The Analytics example: `python3 scripts/make_dashboard.py` writes `_src/partials/dashboard.html` (made-up numbers, labelled as such).
 
+## Local preview
+
+Stefanos previews on his laptop with `serve.cmd` (runs `node scripts/serve.mjs`, http://localhost:4000, no packages). The server mirrors GitHub Pages: folder index pages, redirect to a trailing slash, 404.html, and nothing under `_` or `.` folders. Hosting may move to papaki later; the site is plain files either way.
+
 ## Budgets
 
 First paint under 1.5 s on a phone over 4G, under 100 KB of JavaScript per page, no cookies, nothing loaded from other sites while reading (videos and figures are self-hosted).
