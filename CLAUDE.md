@@ -1,11 +1,12 @@
 # Coremosh website
 
-The site of Coremosh, a software studio for music (a studio in the game-studio sense, not a recording studio). It shows the work (Bandeon, tiltguild.com) and what Coremosh makes (apps, websites, analytics), and every path ends at Contact.
+The site of Coremosh, a software studio for music (a studio in the game-studio sense, not a recording studio). It shows the work (Bandeon, tiltguild.com) and what Coremosh makes: apps and analytics for music, and websites for anyone (bands, artists, and businesses outside music). Every path ends at Contact.
 
 Live address: https://www.coremosh.com (coremosh.com redirects there). Hosted on GitHub Pages from `main`. Stefanos commits and pushes from GitHub Desktop on Windows.
 
 ## Content rules
 
+- Motto (Stefanos, 1 Nov 2026): "We build the core. You make the noise."
 - English only.
 - No prices, rates, packages or offers anywhere. Show the work, then "Get in touch".
 - Brand only: Coremosh speaks as "we". No personal names, no employer, no CV.

@@ -154,9 +154,14 @@ h3 {
 .hero { padding: clamp(48px, 9vw, 120px) 0 var(--space-section); }
 .hero-grid { display: grid; gap: 48px; align-items: center; }
 @media (min-width: 900px) {
-  .hero-grid { grid-template-columns: minmax(0, 6fr) minmax(0, 6fr); gap: 32px; }
+  .hero-grid { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 32px; }
 }
-.hero .display { max-width: 11ch; }
+.hero .display { max-width: none; }
+.display .line { display: block; }
+@media (min-width: 900px) {
+  .hero .display { font-size: clamp(3.25rem, 6.2vw, 5.75rem); }
+  .hero .display .line { white-space: nowrap; }
+}
 
 .pit-frame { position: relative; width: 100%; aspect-ratio: 400 / 320; max-width: 640px; justify-self: end; }
 .pit-frame .pit-placeholder {
