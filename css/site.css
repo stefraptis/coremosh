@@ -2,12 +2,12 @@
    Dark room, warm stage light (amber, with a low ember red), the metal logo as
    the one rough thing. Everything else is crisp: big condensed headlines, plain
    text, mono labels like a setlist, rounded panels with hairline borders.
-   Type: Big Shoulders Display (headlines), Schibsted Grotesk (text),
+   Type: Pirata One (headlines, a cleaner relative of the logo), Schibsted Grotesk (text),
    Martian Mono (labels, nav, meta). All self-hosted.
    Motion: one load sequence on the home page, Pit, the product loops, short
    hover moves. Nothing with reduced motion. */
 
-@font-face { font-family: "Big Shoulders Display"; src: url("/fonts/big-shoulders-display.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "Pirata One"; src: url("/fonts/pirata-one.woff2") format("woff2"); font-weight: 400; font-display: swap; }
 @font-face { font-family: "Schibsted Grotesk"; src: url("/fonts/schibsted-grotesk.woff2") format("woff2"); font-weight: 400 900; font-display: swap; }
 @font-face { font-family: "Martian Mono"; src: url("/fonts/martian-mono.woff2") format("woff2"); font-weight: 100 800; font-display: swap; }
 
@@ -23,7 +23,7 @@
   --amber: #f2a33a;
   --amber-soft: rgba(242, 163, 58, 0.14);
   --ember: #b8321f;
-  --display: "Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
+  --display: "Pirata One", "Arial Narrow", Impact, serif;
   --body: "Schibsted Grotesk", ui-sans-serif, system-ui, sans-serif;
   --mono: "Martian Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
   --gutter: clamp(20px, 4vw, 56px);
@@ -55,9 +55,9 @@ p { margin: 0 0 1em; max-width: 62ch; }
 
 /* Type */
 
-h1, h2, h3 { margin: 0; font-family: var(--display); font-weight: 800; line-height: 0.9; letter-spacing: -0.01em; text-wrap: balance; }
-.display, h1 { font-size: clamp(3.5rem, 10vw, 9rem); font-weight: 900; line-height: 0.86; max-width: 14ch; }
-h2 { font-size: clamp(2.75rem, 6vw, 5.25rem); font-weight: 900; }
+h1, h2, h3 { margin: 0; font-family: var(--display); font-weight: 400; font-synthesis: none; line-height: 0.95; letter-spacing: 0.005em; text-wrap: balance; }
+.display, h1 { font-size: clamp(3.5rem, 10vw, 9rem); font-weight: 400; line-height: 0.92; max-width: 14ch; }
+h2 { font-size: clamp(2.75rem, 6vw, 5.25rem); font-weight: 400; }
 h3 { font-size: clamp(1.75rem, 2.6vw, 2.25rem); }
 .accent { color: var(--amber); }
 .lead { font-size: clamp(1.1875rem, 1.6vw, 1.375rem); line-height: 1.5; color: var(--muted); max-width: 44ch; margin-top: 28px; }
@@ -123,7 +123,9 @@ h3 { font-size: clamp(1.75rem, 2.6vw, 2.25rem); }
   content: ""; position: absolute; z-index: -1; inset: -120px 0 -80px;
   background:
     radial-gradient(38% 46% at calc(78% + (var(--hx) - 78%) * 0.35) calc(42% + (var(--hy) - 42%) * 0.35), rgba(242, 163, 58, 0.16), rgba(242, 163, 58, 0) 70%),
-    radial-gradient(30% 40% at 6% 92%, rgba(184, 50, 31, 0.16), rgba(184, 50, 31, 0) 70%);
+    radial-gradient(34% 44% at 4% 78%, rgba(184, 50, 31, 0.13), rgba(184, 50, 31, 0) 70%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 55%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 55%, transparent 100%);
   pointer-events: none;
 }
 .hero-grid { display: grid; gap: 40px; align-items: center; }
@@ -138,7 +140,7 @@ h3 { font-size: clamp(1.75rem, 2.6vw, 2.25rem); }
   .hero .display .line { white-space: nowrap; }
 }
 /* Sized to its own column: "You make the noise." always ends before Pit begins. */
-@supports (font-size: 1cqi) { @media (min-width: 1000px) { .hero .display { font-size: min(8.5rem, 12.6cqi); } } }
+@supports (font-size: 1cqi) { @media (min-width: 1000px) { .hero .display { font-size: min(9.5rem, 13.4cqi); } } }
 .pit-frame { margin: 0; width: 100%; max-width: 600px; justify-self: end; }
 .pit-stage {
   aspect-ratio: 400 / 320; width: 100%;
@@ -180,7 +182,7 @@ h3 { font-size: clamp(1.75rem, 2.6vw, 2.25rem); }
   .project-info > p:not(.meta) { grid-column: 2; grid-row: 1 / span 2; align-self: end; }
   .project-info .arrow-link { grid-column: 3; grid-row: 1 / span 2; align-self: end; }
 }
-.project-info h3 { font-size: clamp(3rem, 5.4vw, 5rem); font-weight: 900; line-height: 0.86; }
+.project-info h3 { font-size: clamp(3rem, 5.4vw, 5rem); font-weight: 400; line-height: 0.92; }
 .project-info h3 a { text-decoration: none; transition: color 150ms ease-out; }
 .project-info h3 a:hover { color: var(--amber); }
 .project-info p { color: var(--muted); margin: 0; }
@@ -199,7 +201,7 @@ h3 { font-size: clamp(1.75rem, 2.6vw, 2.25rem); }
 .service:hover { border-color: var(--border-strong); transform: translateY(-2px); }
 .service .icon { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 12px; background: var(--amber-soft); color: var(--amber); margin-bottom: 18px; }
 .service .icon svg { width: 24px; height: 24px; }
-.service h3 { font-size: clamp(2.25rem, 3.2vw, 2.75rem); font-weight: 900; }
+.service h3 { font-size: clamp(2.25rem, 3.2vw, 2.75rem); font-weight: 400; }
 .service p { margin: 0; color: var(--muted); }
 .service .meta { margin-top: 10px; padding-top: 18px; border-top: 1px solid var(--border); }
 
@@ -218,7 +220,7 @@ h3 { font-size: clamp(1.75rem, 2.6vw, 2.25rem); }
   .steps li::after { content: ""; position: absolute; top: 22px; left: 56px; right: -20px; height: 1px; background: linear-gradient(90deg, rgba(242, 163, 58, 0.45), var(--border)); }
   .steps li:last-child::after { content: none; }
 }
-.steps h3 { font-size: clamp(2rem, 2.6vw, 2.5rem); font-weight: 900; }
+.steps h3 { font-size: clamp(2rem, 2.6vw, 2.5rem); font-weight: 400; }
 .steps p { color: var(--muted); margin: 0; }
 
 /* Closing call: a lit panel */
@@ -244,6 +246,8 @@ h3 { font-size: clamp(1.75rem, 2.6vw, 2.25rem); }
 .page-head::before {
   content: ""; position: absolute; z-index: -1; inset: -120px 0 -40px;
   background: radial-gradient(40% 60% at 85% 20%, rgba(242, 163, 58, 0.11), rgba(242, 163, 58, 0) 70%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 40%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 40%, transparent 100%);
   pointer-events: none;
 }
 .page-head + .section { padding-top: clamp(56px, 7vw, 104px); }
@@ -273,7 +277,7 @@ h3 { font-size: clamp(1.75rem, 2.6vw, 2.25rem); }
 .next-case .arrow-link:first-child::after { content: none; }
 .next-case .arrow-link:first-child::before { content: "\2190"; color: var(--amber); }
 /* The old paper band is now a quiet raised band. */
-.paper { margin-top: var(--section); padding: var(--section) 0; background: linear-gradient(180deg, rgba(239, 233, 222, 0.025), rgba(239, 233, 222, 0)); border-top: 1px solid var(--border); }
+.paper { margin-top: var(--section); padding: var(--section) 0; background: linear-gradient(180deg, rgba(239, 233, 222, 0), rgba(239, 233, 222, 0.03) 30%, rgba(239, 233, 222, 0.03) 70%, rgba(239, 233, 222, 0)); }
 .paper + .section { padding-top: 0; }
 
 /* Design */
@@ -310,10 +314,18 @@ h3 { font-size: clamp(1.75rem, 2.6vw, 2.25rem); }
 
 /* Footer: amber, with the logo full width */
 
-.foot { background: var(--amber); color: #120d07; padding: clamp(64px, 8vw, 104px) 0 28px; }
+.foot { position: relative; background: var(--amber); color: #120d07; padding: clamp(64px, 8vw, 104px) 0 28px; }
+/* The room warms up into the amber footer over 260px, through the same colours, instead of switching at a line. */
+.foot::before {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 100%; height: 260px; pointer-events: none;
+  background: linear-gradient(to bottom,
+    rgba(242, 163, 58, 0) 0%, rgba(242, 163, 58, 0.04) 30%, rgba(242, 163, 58, 0.14) 55%,
+    rgba(242, 163, 58, 0.36) 75%, rgba(242, 163, 58, 0.7) 90%, var(--amber) 100%);
+}
 .foot-top { display: grid; gap: 32px; margin-bottom: clamp(40px, 6vw, 72px); }
 @media (min-width: 900px) { .foot-top { grid-template-columns: minmax(0, 1fr) auto; align-items: start; } }
-.foot-line { font-family: var(--display); font-weight: 900; font-size: clamp(2.25rem, 4.4vw, 3.75rem); line-height: 0.9; margin: 0; max-width: 16ch; }
+.foot-line { font-family: var(--display); font-weight: 400; font-size: clamp(2.25rem, 4.4vw, 3.75rem); line-height: 0.95; margin: 0; max-width: 22ch; }
+.foot-line span { display: block; }
 .foot-links { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, auto); gap: 2px 48px; }
 .foot-links a { display: inline-block; padding: 8px 0; font-family: var(--mono); font-size: 0.8125rem; font-weight: 600; text-decoration: none; }
 .foot-links a:hover { text-decoration: underline; text-decoration-thickness: 2px; }

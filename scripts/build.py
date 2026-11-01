@@ -23,7 +23,7 @@ import re
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SRC = ROOT / "_src"
-NAV_KEYS = ["work", "design", "studio", "contact"]
+NAV_KEYS = ["work", "design", "about", "contact"]
 
 
 def short_hash(path):
