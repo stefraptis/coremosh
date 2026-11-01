@@ -47,7 +47,6 @@ body {
 img, svg, video { display: block; max-width: 100%; height: auto; }
 a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.25em; }
 :focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; border-radius: 4px; }
-.foot :focus-visible { outline-color: var(--bg); }
 p { margin: 0 0 1em; max-width: 62ch; }
 .wrap { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
 .skip { position: absolute; left: 12px; top: -60px; z-index: 10; background: var(--amber); color: var(--bg); padding: 10px 14px; font-weight: 700; border-radius: 8px; }
@@ -225,7 +224,7 @@ h3 { font-size: clamp(1.75rem, 2.6vw, 2.25rem); }
 
 /* Closing call: a lit panel */
 
-.call { padding: var(--section) 0; }
+.call { padding: var(--section) 0 clamp(64px, 7vw, 104px); }
 .call-panel {
   position: relative; overflow: hidden; isolation: isolate; text-align: center;
   padding: clamp(64px, 9vw, 128px) clamp(24px, 5vw, 80px); border-radius: calc(var(--radius) + 10px);
@@ -312,27 +311,14 @@ h3 { font-size: clamp(1.75rem, 2.6vw, 2.25rem); }
 .text-block h2:first-child { margin-top: 0; }
 .text-block p { color: var(--muted); }
 
-/* Footer: amber, with the logo full width */
+/* Footer: one quiet line */
 
-.foot { position: relative; background: var(--amber); color: #120d07; padding: clamp(64px, 8vw, 104px) 0 28px; }
-/* The room warms up into the amber footer over 260px, through the same colours, instead of switching at a line. */
-.foot::before {
-  content: ""; position: absolute; left: 0; right: 0; bottom: 100%; height: 260px; pointer-events: none;
-  background: linear-gradient(to bottom,
-    rgba(242, 163, 58, 0) 0%, rgba(242, 163, 58, 0.04) 30%, rgba(242, 163, 58, 0.14) 55%,
-    rgba(242, 163, 58, 0.36) 75%, rgba(242, 163, 58, 0.7) 90%, var(--amber) 100%);
-}
-.foot-top { display: grid; gap: 32px; margin-bottom: clamp(40px, 6vw, 72px); }
-@media (min-width: 900px) { .foot-top { grid-template-columns: minmax(0, 1fr) auto; align-items: start; } }
-.foot-line { font-family: var(--display); font-weight: 900; font-size: clamp(2.25rem, 4.4vw, 3.75rem); line-height: 0.9; margin: 0; max-width: 22ch; }
-.foot-line span { display: block; }
-.foot-links { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, auto); gap: 2px 48px; }
-.foot-links a { display: inline-block; padding: 8px 0; font-family: var(--mono); font-size: 0.8125rem; font-weight: 600; text-decoration: none; }
-.foot-links a:hover { text-decoration: underline; text-decoration-thickness: 2px; }
-.foot-logo { width: 100%; height: auto; }
-.foot-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; margin-top: 28px; padding-top: 20px; border-top: 1px solid rgba(18, 13, 7, 0.2); font-family: var(--mono); font-size: 0.75rem; font-weight: 600; }
-.foot-bottom a { text-decoration: none; }
-.foot-bottom a:hover { text-decoration: underline; }
+.foot { border-top: 1px solid var(--border); padding: 22px 0; }
+.foot-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 24px; }
+.foot-copy { margin: 0; font-family: var(--mono); font-size: 0.75rem; color: var(--muted); }
+.foot-links { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0 22px; }
+.foot-links a { display: inline-flex; align-items: center; min-height: 44px; font-family: var(--mono); font-size: 0.75rem; color: var(--muted); text-decoration: none; transition: color 150ms ease-out; }
+.foot-links a:hover { color: var(--text); }
 
 /* The one load sequence, home page only. */
 @keyframes rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
