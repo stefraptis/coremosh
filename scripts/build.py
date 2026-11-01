@@ -45,9 +45,26 @@ def parse(page):
     return meta, text[m.end():].rstrip() + "\n"
 
 
+def build_figure():
+    """js/pit.js: the Hairline engine (MIT, notice kept), the site's host, and the Pit figure."""
+    fig = ROOT / "_figures"
+    licence = (fig / "HAIRLINE-LICENSE").read_text(encoding="utf-8").strip()
+    parts = [
+        "/*! Hairline engine, @lucasmarkes/hairline 0.5.1\n\n" + licence + "\n*/",
+        (fig / "hairline-kernel.js").read_text(encoding="utf-8"),
+        (fig / "host.js").read_text(encoding="utf-8"),
+        "(() => {\n" + (fig / "pit.js").read_text(encoding="utf-8") + "\n})();",
+    ]
+    out = ROOT / "js" / "pit.js"
+    out.parent.mkdir(exist_ok=True)
+    out.write_text("\n".join(parts) + "\n", encoding="utf-8")
+
+
 def main():
+    build_figure()
     layout = (SRC / "layout.html").read_text(encoding="utf-8")
     v_css = short_hash(ROOT / "css" / "site.css")
+    v_pit = short_hash(ROOT / "js" / "pit.js")
     built = []
     for page in sorted((SRC / "pages").glob("*.html")):
         meta, body = parse(page)
@@ -60,11 +77,11 @@ def main():
             "path": meta["path"],
             "nav": nav or "none",
             "v_css": v_css,
-            "body": body,
+            "v_pit": v_pit,
         }
         for key in NAV_KEYS:
             values[f"cur_{key}"] = ' aria-current="page"' if nav == key else ""
-        html = layout
+        html = layout.replace("{{body}}", body)
         for key, value in values.items():
             html = html.replace("{{" + key + "}}", value)
         leftover = re.findall(r"\{\{\w+\}\}", html)

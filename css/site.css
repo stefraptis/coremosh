@@ -163,12 +163,16 @@ h3 {
   .hero .display .line { white-space: nowrap; }
 }
 
-.pit-frame { position: relative; width: 100%; aspect-ratio: 400 / 320; max-width: 640px; justify-self: end; }
-.pit-frame .pit-placeholder {
-  position: absolute; inset: 0; display: grid; place-items: center;
-  border: 1px dashed var(--edge); color: var(--alu); font-size: 0.9375rem;
+.pit-frame { margin: 0; width: 100%; max-width: 640px; justify-self: end; }
+.pit-stage {
+  aspect-ratio: 400 / 320; width: 100%;
+  /* The Hairline palette, from the site's own: plates in the floor colour, amber as the one bright stroke. */
+  --hairline-plate: #171513; --hairline-hi: #f2a33a; --hairline-edge: #8a847b; --hairline-mid: #4a453f; --hairline-lo: #2e2a26;
+  --hairline-stroke: 1;
 }
-.readout { margin-top: 8px; font-size: 0.875rem; color: var(--alu); font-variant-numeric: tabular-nums; }
+.pit-hint { margin-top: 4px; font-size: 0.875rem; color: var(--alu); text-align: center; }
+.hint-touch { display: none; }
+@media (hover: none) { .hint-hover { display: none; } .hint-touch { display: inline; } }
 
 /* What we make: a ruled list, not cards */
 
