@@ -53,6 +53,7 @@ Nothing else: no scroll effects, no tickers, no moving grain. With reduced motio
 - Page bodies live in `_src/pages/*.html`, each with a header comment (path, title, description, nav). The shared header and footer are in `_src/layout.html`.
 - `python3 scripts/build.py` writes every page to the repo root (`index.html`, `work/index.html`, ...). Edit `_src`, never the built files, then build.
 - The stylesheet and every script in `js/` carry a version tag from their contents (`{{v_css}}`, `{{v_<name>}}`), so browsers never mix new pages with old cached files.
+- `build.py` also writes `sitemap.xml` (every page with a folder path, so not the 404 page). `robots.txt` points to it. The sitemap is submitted in Google Search Console (domain property coremosh.com, verified by a TXT record at papaki: keep that record).
 - `{{include:name}}` in a page pulls in `_src/partials/name.html` (none in use now).
 - Pit: the figure is `_figures/pit.js`; `build.py` bundles it with the engine (`_figures/hairline-kernel.js`, unchanged, MIT notice from `_figures/HAIRLINE-LICENSE`) and `_figures/host.js` into `js/pit.js`. Check a change with the Hairline look tool before building.
 - Loops: `python3 scripts/make_loop.py <desktop-full.png> <phone-full.png> <name>` writes `media/<name>.mp4`, its poster and 16:10 images. The phone-only version is cropped from it with ffmpeg `crop=420:710:1145:95` into `media/<name>-phone.mp4` plus a poster. On the page the posters load only as they come near (`data-poster`, handled by `js/loops.js`). The 16:10 images are not used now.

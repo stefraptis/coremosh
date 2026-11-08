@@ -23,6 +23,7 @@ import re
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SRC = ROOT / "_src"
+SITE = "https://www.coremosh.com"
 NAV_KEYS = []  # one page: the menu links to sections, js/motion.js marks the one in view
 
 
@@ -60,6 +61,16 @@ def build_figure():
     out.write_text("\n".join(parts) + "\n", encoding="utf-8")
 
 
+def write_sitemap(urls):
+    """sitemap.xml for search engines: every page with a folder path (not the 404 page)."""
+    urls = sorted(urls, key=lambda u: (u != SITE + "/", u))
+    lines = ['<?xml version="1.0" encoding="UTF-8"?>',
+             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+    lines += [f"  <url><loc>{u}</loc></url>" for u in urls]
+    lines.append("</urlset>")
+    (ROOT / "sitemap.xml").write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
 def main():
     build_figure()
     layout = (SRC / "layout.html").read_text(encoding="utf-8")
@@ -67,6 +78,7 @@ def main():
     # Every script in js/ gets a version tag from its contents: {{v_loops}}, {{v_story}}, ...
     versions = {"v_" + js.stem: short_hash(js) for js in sorted((ROOT / "js").glob("*.js"))}
     built = []
+    urls = []
     for page in sorted((SRC / "pages").glob("*.html")):
         meta, body = parse(page)
         nav = meta.get("nav", "")
@@ -97,7 +109,10 @@ def main():
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(html, encoding="utf-8")
         built.append(str(out.relative_to(ROOT)))
-    print("built:", ", ".join(built))
+        if path.endswith("/"):
+            urls.append(SITE + path)
+    write_sitemap(urls)
+    print("built:", ", ".join(built), "+ sitemap.xml")
 
 
 if __name__ == "__main__":
