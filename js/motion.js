@@ -6,7 +6,7 @@
    because it moves only when the reader moves.
    3. One page: the header turns solid once the page scrolls, the menu marks the
       section in view, and "Ask about ..." links pick the topic in the form.
-      /?about=design does the same when someone arrives with a link. */
+      /?about=website does the same when someone arrives with a link. */
 (() => {
   const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const fine = matchMedia("(hover: hover) and (pointer: fine)").matches;

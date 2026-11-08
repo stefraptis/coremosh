@@ -204,7 +204,7 @@ h3 { font-size: clamp(1.75rem, 2.6vw, 2.25rem); }
 /* What we do: three panels */
 
 .services { display: grid; gap: 16px; }
-@media (min-width: 900px) { .services { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (min-width: 900px) { .services { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .service {
   position: relative; display: grid; gap: 14px; align-content: start; padding: clamp(28px, 3vw, 40px);
   background: linear-gradient(180deg, var(--surface-2), var(--surface)); border: 1px solid var(--border); border-radius: var(--radius);
@@ -292,17 +292,6 @@ h3 { font-size: clamp(1.75rem, 2.6vw, 2.25rem); }
 .paper { margin-top: var(--section); padding: var(--section) 0; background: linear-gradient(180deg, rgba(239, 233, 222, 0), rgba(239, 233, 222, 0.03) 30%, rgba(239, 233, 222, 0.03) 70%, rgba(239, 233, 222, 0)); }
 .paper + .section { padding-top: 0; }
 
-/* Design */
-
-.offer { list-style: none; margin: 36px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
-.offer li { font-family: var(--mono); font-size: 0.75rem; padding: 9px 16px; border: 1px solid var(--border-strong); border-radius: 999px; background: rgba(239, 233, 222, 0.03); }
-.wall { display: grid; gap: 20px; }
-@media (min-width: 760px) { .wall { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-.wall .print img { width: 100%; aspect-ratio: 1200 / 630; object-fit: cover; border-radius: var(--radius); transition: transform 500ms var(--ease); }
-.wall .print { overflow: hidden; }
-.wall .print:hover img { transform: scale(1.015); }
-.wall figcaption { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); padding: 14px 8px 4px; }
-
 /* Forms */
 
 .form-sheet { position: relative; max-width: 820px; padding: clamp(28px, 5vw, 56px); background: var(--surface); border: 1px solid var(--border); border-radius: calc(var(--radius) + 6px); }
@@ -385,7 +374,6 @@ main > section:last-child { padding-bottom: var(--section); }
 /* One page: sections, about, contact */
 section[id] { scroll-margin-top: 88px; }
 .service .arrow-link { margin-top: 10px; padding-top: 18px; border-top: 1px solid var(--border); justify-self: stretch; color: var(--text); }
-#design .offer { margin: 0 0 clamp(32px, 4vw, 48px); }
 .about { display: grid; gap: 24px 56px; margin-bottom: clamp(64px, 8vw, 104px); }
 @media (min-width: 900px) { .about { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: start; } }
 .about h2 { max-width: 10ch; }

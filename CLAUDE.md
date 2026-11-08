@@ -1,8 +1,10 @@
 # Coremosh website
 
-The site of Coremosh software studios. It shows the work (Bandeon, tiltguild.com) and what Coremosh makes: apps, websites and design (logos, album and single covers, posters for live shows, release cards, the look of sites and apps). Websites are for anyone, music or not. Every path ends at Contact.
+The site of Coremosh software studios. It shows the work (Bandeon, tiltguild.com) and what Coremosh makes: apps and websites. Websites are for anyone, music or not.
 
-**One page** (Stefanos, 2 Nov 2026). Everything is on the home page, in this order: hero, Work (`#work`), What we do (`#services`), Design (`#design`), About with How we work (`#about`), Contact with the form (`#contact`). The only other pages are /privacy/ and the 404 page. The menu links to `/#work`, `/#design`, `/#about`, `/#contact` (so it also works from Privacy); `js/motion.js` marks the section in view. Contact buttons everywhere: hero "Get in touch", "Start yours", and "Ask about an app / a website / design" links that also pick the topic in the form (`data-about`, or `/?about=design`).
+**Design is off the site for now** (Stefanos, 8 Nov 2026: "we will put it again in the future"). No design service card, Design section, Design menu or footer link, design contact topic, or design wording. The last version with design is commit `6df29c0` (section, Tilt Guild release cards in `media/design/`, styles `.offer` and `.wall`); bring it back from there when Stefanos asks. Every path ends at Contact.
+
+**One page** (Stefanos, 2 Nov 2026). Everything is on the home page, in this order: hero, Work (`#work`), What we do (`#services`, apps and websites), About with How we work (`#about`), Contact with the form (`#contact`). The only other pages are /privacy/ and the 404 page. The menu links to `/#work`, `/#about`, `/#contact` (so it also works from Privacy); `js/motion.js` marks the section in view. Contact buttons everywhere: hero "Get in touch", "Start yours", and "Ask about an app / a website" links that also pick the topic in the form (`data-about`, or `/?about=website`).
 
 Live address: https://www.coremosh.com (coremosh.com redirects there). Hosted on GitHub Pages from `main`. Stefanos commits and pushes from GitHub Desktop on Windows.
 
@@ -13,7 +15,7 @@ Live address: https://www.coremosh.com (coremosh.com redirects there). Hosted on
 - No prices, rates, packages or offers anywhere. Show the work, then "Get in touch".
 - Brand only: Coremosh speaks as "we". No personal names, no employer, no CV.
 - No analytics offering on the site (removed 1 Nov 2026 at Stefanos's request).
-- Design: say what we offer and show the pieces. No write-ups that analyse the logos. The Bandeon logo is not final: do not show it anywhere.
+- Design (when it returns): say what we offer and show the pieces. No write-ups that analyse the logos. The Bandeon logo is not final: do not show it anywhere.
 - Say "Coremosh software studios". Do not explain the name with a game-studio comparison.
 - The idle game is not shown until Stefanos says so.
 - Bandeon: studios are hidden in the app, so the site does not mention them.
@@ -30,7 +32,7 @@ The idea stays (dark room, warm stage light, the metal logo) but the execution i
 - **No hard colour edges.** Every light fades out (masks on the hero and page-head glows), and bands fade in and out. A colour that stops at a straight line looks unfinished.
 - **Type:** Big Shoulders Display (headlines, crisp, weight 800 to 900, sentence case), Schibsted Grotesk (text), Martian Mono (badge, nav, kickers, meta). All self-hosted and preloaded, Latin subsets, OFL, credited on /privacy/. Pirata One (closer to the logo) was tried on 1 Nov and rejected by Stefanos; keep Big Shoulders.
 - **Components:** a pill badge ("Coremosh software studios") with an amber light; a plain text menu where each link gets a glowing amber hairline, faded at both ends like the lit card edges, drawn from the centre on hover and kept under the section in view (no pill); rounded amber buttons and outlined secondary buttons; rounded panels with hairline borders for project media, services (with small line icons), what-we-built cards and the form; a numbered timeline for how we work; a lit contact panel; the topic field as amber radio pills. The header is sticky and turns solid with a blur once the page scrolls.
-- **Footer:** one quiet line on the dark page, like the Tilt Guild site: "© 2026 Coremosh software studios" and the links Work, Design, About, Contact, Privacy. No logo, no amber, no motto (Stefanos, 2 Nov: the big amber footer was too much).
+- **Footer:** one quiet line on the dark page, like the Tilt Guild site: "© 2026 Coremosh software studios" and the links Work, About, Contact, Privacy. No logo, no amber, no motto (Stefanos, 2 Nov: the big amber footer was too much).
 - Kickers use music words sparingly (Latest releases, The lineup, Setlist, Encore). Numbering only for real sequences.
 - The hero figure "Pit" is a Hairline figure (`@lucasmarkes/hairline`, MIT), no caption. Keep its licence notice; credit on /privacy/.
 
@@ -54,7 +56,6 @@ Nothing else: no scroll effects, no tickers, no moving grain. With reduced motio
 - `{{include:name}}` in a page pulls in `_src/partials/name.html` (none in use now).
 - Pit: the figure is `_figures/pit.js`; `build.py` bundles it with the engine (`_figures/hairline-kernel.js`, unchanged, MIT notice from `_figures/HAIRLINE-LICENSE`) and `_figures/host.js` into `js/pit.js`. Check a change with the Hairline look tool before building.
 - Loops: `python3 scripts/make_loop.py <desktop-full.png> <phone-full.png> <name>` writes `media/<name>.mp4`, its poster and 16:10 images. The phone-only version is cropped from it with ffmpeg `crop=420:710:1145:95` into `media/<name>-phone.mp4` plus a poster. On the page the posters load only as they come near (`data-poster`, handled by `js/loops.js`). The 16:10 images are not used now.
-- Design examples live in `media/design/` (the Tilt Guild release cards).
 
 ## Local preview
 
