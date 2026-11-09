@@ -12,7 +12,7 @@ Live address: https://www.coremosh.com (coremosh.com redirects there). Hosted on
 
 - Motto (Stefanos, 1 Nov 2026): "We build the core. You make the noise."
 - English only, British spelling (organise, colour, centralised, optimisation). Proper names keep their own spelling (SIL Open Font License).
-- The home page copy is Stefanos's own text (9 Nov 2026, "Website Copy 2026"): About, What we do, the two projects and How we work (Discover, Design, Develop, Maintain). Keep it as written; only adapt headings to sentence case with "and" instead of "&" (so "Design & Artwork" is "Design and artwork"). Each service card has a one-line summary (`.service-line`, Stefanos's wording) above its description. The word "design" is fine in that copy (the process step, "thoughtfully designed"); only the design service stays off the site.
+- The home page copy is Stefanos's own text (9 Nov 2026, "Website Copy 2026"): About, What we do, the two projects and How we work (Discover, Design, Develop, Maintain). Keep it as written; only adapt headings to sentence case with "and" instead of "&" (so "Design & Artwork" is "Design and artwork"). Each service card has a one-line summary (`.service-line`, Stefanos's wording) above its description.
 - Tone (Stefanos): professional, direct and confident; no generic SaaS terms or promotional language; the link between music and software stays clear without limiting the studio to music; describe real functions; concise over marketing.
 - No prices, rates, packages or offers anywhere. Show the work, then "Get in touch".
 - Brand only: Coremosh speaks as "we". No personal names, no employer, no CV.
