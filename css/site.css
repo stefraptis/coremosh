@@ -2,13 +2,13 @@
    Dark room, warm stage light (amber, with a low ember red), the metal logo as
    the one rough thing. Everything else is crisp: big condensed headlines, plain
    text, mono labels like a setlist, rounded panels with hairline borders.
-   Type: Big Shoulders Display (headlines), Schibsted Grotesk (text),
+   Type: Big Shoulders Display (headlines), Chivo (text),
    Martian Mono (labels, nav, meta). All self-hosted.
    Motion: one load sequence on the home page, Pit, the product loops, short
    hover moves. Nothing with reduced motion. */
 
 @font-face { font-family: "Big Shoulders Display"; src: url("/fonts/big-shoulders-display.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
-@font-face { font-family: "Schibsted Grotesk"; src: url("/fonts/schibsted-grotesk.woff2") format("woff2"); font-weight: 400 900; font-display: swap; }
+@font-face { font-family: "Chivo"; src: url("/fonts/chivo.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
 @font-face { font-family: "Martian Mono"; src: url("/fonts/martian-mono.woff2") format("woff2"); font-weight: 100 800; font-display: swap; }
 
 :root {
@@ -24,7 +24,7 @@
   --amber-soft: rgba(242, 163, 58, 0.14);
   --ember: #b8321f;
   --display: "Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
-  --body: "Schibsted Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --body: "Chivo", ui-sans-serif, system-ui, sans-serif;
   --mono: "Martian Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
   --gutter: clamp(20px, 4vw, 56px);
   --max: 1360px;
@@ -128,35 +128,47 @@ h3 { font-size: clamp(1.75rem, 2.6vw, 2.25rem); }
 .section { padding: var(--section) 0 0; position: relative; }
 .section-top { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 16px 32px; margin-bottom: clamp(40px, 5vw, 72px); }
 .section-top p { color: var(--muted); max-width: 44ch; margin: 0; }
+.section-top .kicker { color: var(--amber); max-width: none; margin: 0 0 20px; }
 
-/* Hero: the stage light is on. */
+/* Hero: a gig poster. The logo hangs centred like the band's banner, the motto
+   under it, and Pit, the crowd, at the front of the stage. The stage light sits
+   above the logo and leans toward the cursor. */
 
-@property --hx { syntax: "<percentage>"; inherits: true; initial-value: 78%; }
-@property --hy { syntax: "<percentage>"; inherits: true; initial-value: 42%; }
-.hero { position: relative; padding: clamp(32px, 6vw, 80px) 0 0; isolation: isolate; --hx: 78%; --hy: 42%; transition: --hx 900ms var(--ease), --hy 900ms var(--ease); }
+@property --hx { syntax: "<percentage>"; inherits: true; initial-value: 50%; }
+@property --hy { syntax: "<percentage>"; inherits: true; initial-value: 26%; }
+.hero { position: relative; padding: clamp(24px, 4vw, 56px) 0 0; isolation: isolate; text-align: center; --hx: 50%; --hy: 26%; transition: --hx 900ms var(--ease), --hy 900ms var(--ease); }
 .hero::before {
   content: ""; position: absolute; z-index: -1; inset: -120px 0 -80px;
   background:
-    radial-gradient(38% 46% at calc(78% + (var(--hx) - 78%) * 0.35) calc(42% + (var(--hy) - 42%) * 0.35), rgba(242, 163, 58, 0.16), rgba(242, 163, 58, 0) 70%),
-    radial-gradient(34% 44% at 4% 78%, rgba(184, 50, 31, 0.13), rgba(184, 50, 31, 0) 70%);
+    radial-gradient(42% 40% at calc(50% + (var(--hx) - 50%) * 0.3) calc(30% + (var(--hy) - 26%) * 0.3), rgba(242, 163, 58, 0.17), rgba(242, 163, 58, 0) 70%),
+    radial-gradient(30% 40% at 6% 82%, rgba(184, 50, 31, 0.12), rgba(184, 50, 31, 0) 70%),
+    radial-gradient(30% 40% at 96% 70%, rgba(184, 50, 31, 0.08), rgba(184, 50, 31, 0) 70%);
   -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 55%, transparent 100%);
   mask-image: linear-gradient(to bottom, #000 0%, #000 55%, transparent 100%);
   pointer-events: none;
 }
-.hero-grid { display: grid; gap: 40px; align-items: center; }
-@media (min-width: 1000px) {
-  .hero-grid { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); min-height: min(calc(100svh - 92px - 80px), 800px); gap: 24px; }
-}
-.hero .display { max-width: none; font-size: clamp(3.75rem, 13vw, 9.5rem); }
+.hero-logo { display: flex; justify-content: center; }
+.hero-logo .slot { display: block; width: min(600px, 80vw); aspect-ratio: 1372 / 507; }
+.hero-logo img { width: 100%; height: auto; }
+.hero-copy { display: flex; flex-direction: column; align-items: center; }
+.hero .badge { margin: clamp(18px, 2.4vw, 28px) 0 clamp(20px, 2.6vw, 30px); }
+.hero .display { max-width: none; font-size: clamp(3.25rem, 12.5vw, 7.25rem); line-height: 0.88; }
 .hero .display .line { display: block; }
-@media (min-width: 1000px) {
-  .hero-copy { container-type: inline-size; }
-  .hero .display { font-size: min(8rem, 6.4vw); }
-  .hero .display .line { white-space: nowrap; }
-}
-/* Sized to its own column: "You make the noise." always ends before Pit begins. */
-@supports (font-size: 1cqi) { @media (min-width: 1000px) { .hero .display { font-size: min(8.5rem, 12.6cqi); } } }
-.pit-frame { margin: 0; width: 100%; max-width: 600px; justify-self: end; }
+@media (min-width: 760px) { .hero .display { font-size: min(7.25rem, 8vw); } .hero .display .line { white-space: nowrap; } }
+.hero .lead { margin-left: auto; margin-right: auto; }
+/* The logo travels from the hero into the header as the page scrolls
+   (js/motion.js). It is one image, the header's: drawn big over the hero slot,
+   then scaled down into place, so there is never a second logo on screen. */
+.js .page-home:not(.logo-fly):not(.logo-still) .mark img { opacity: 0; }
+.logo-fly .mark, .logo-still .mark { position: relative; height: 50px; aspect-ratio: 1372 / 507; }
+.logo-fly .mark img { position: absolute; left: 0; top: 0; height: auto; max-width: none; transform-origin: 0 0; will-change: transform; }
+.logo-fly .hero-logo img { visibility: hidden; }
+.logo-still .mark img { opacity: 0; transition: opacity 300ms ease-out; }
+.logo-still.logo-out .mark img { opacity: 1; }
+@media (max-width: 560px) { .logo-fly .mark, .logo-still .mark { height: 30px; } }
+@media (max-width: 370px) { .logo-fly .mark, .logo-still .mark { height: 24px; } }
+.hero .actions { justify-content: center; }
+.pit-frame { margin: clamp(8px, 2vw, 24px) auto 0; width: 100%; max-width: 560px; }
 .pit-stage {
   aspect-ratio: 400 / 320; width: 100%;
   --hairline-plate: #100e0c; --hairline-hi: #f2a33a; --hairline-edge: #b3ab9f; --hairline-mid: #4a453f; --hairline-lo: #2a2622;
@@ -328,13 +340,14 @@ h3 { font-size: clamp(1.75rem, 2.6vw, 2.25rem); }
 @keyframes light-up { from { opacity: 0; } to { opacity: 1; } }
 @media (prefers-reduced-motion: no-preference) {
   .page-home .hero::before { animation: light-up 1400ms 100ms ease-out both; }
-  .page-home .hero .badge { animation: rise 600ms 80ms var(--ease) both; }
+  .page-home .hero-logo .slot, .page-home .mark img { animation: fade 900ms 60ms ease-out both; }
+  .page-home .hero .badge { animation: rise 600ms 220ms var(--ease) both; }
   .page-home .hero .display .line { animation: rise 800ms var(--ease) both; }
-  .page-home .hero .display .line:nth-child(1) { animation-delay: 160ms; }
-  .page-home .hero .display .line:nth-child(2) { animation-delay: 280ms; }
-  .page-home .hero .lead { animation: rise 700ms 460ms var(--ease) both; }
-  .page-home .hero .actions { animation: rise 700ms 560ms var(--ease) both; }
-  .page-home .hero .pit-stage { animation: fade 1000ms 500ms ease-out both; }
+  .page-home .hero .display .line:nth-child(1) { animation-delay: 300ms; }
+  .page-home .hero .display .line:nth-child(2) { animation-delay: 420ms; }
+  .page-home .hero .lead { animation: rise 700ms 580ms var(--ease) both; }
+  .page-home .hero .actions { animation: rise 700ms 680ms var(--ease) both; }
+  .page-home .hero .pit-stage { animation: fade 1000ms 700ms ease-out both; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition-duration: 0ms !important; }
@@ -374,12 +387,14 @@ main > section:last-child { padding-bottom: var(--section); }
 /* One page: sections, about, contact */
 section[id] { scroll-margin-top: 88px; }
 .service .arrow-link { margin-top: 10px; padding-top: 18px; border-top: 1px solid var(--border); justify-self: stretch; color: var(--text); }
-.about { display: grid; gap: 24px 56px; margin-bottom: clamp(64px, 8vw, 104px); }
+/* About the studio: the name of the section big on the left, the words on the right. */
+.about { display: grid; gap: 28px 56px; }
 @media (min-width: 900px) { .about { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: start; } }
-.about h2 { max-width: 10ch; }
-.about-text .lead { margin-top: 0; color: var(--text); }
-.about-text p { color: var(--muted); }
-.steps-title { font-family: var(--mono); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.04em; color: var(--amber); margin: 0 0 28px; }
+.about h2 { font-size: clamp(3.5rem, 8.4vw, 8rem); max-width: 6ch; }
+.about-text { display: grid; gap: 0; padding-top: 18px; border-top: 1px solid var(--border-strong); }
+@media (min-width: 900px) { .about-text { margin-top: 0.6em; } }
+.about-text .lead { margin: 0 0 1.1em; color: var(--text); font-size: clamp(1.375rem, 2.3vw, 1.9375rem); line-height: 1.32; max-width: 30ch; }
+.about-text p { color: var(--muted); max-width: 54ch; }
 .contact { padding-bottom: clamp(64px, 7vw, 104px); }
 .contact-panel { text-align: left; display: grid; gap: 40px 64px; padding: clamp(32px, 5vw, 72px); }
 @media (min-width: 960px) { .contact-panel { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); align-items: start; } }
@@ -398,3 +413,22 @@ section[id] { scroll-margin-top: 88px; }
 .service { display: flex; flex-direction: column; }
 .service .arrow-link { margin-top: auto; }
 .service > p:last-of-type { margin-bottom: 16px; }
+
+
+/* Worn surface below the hero: the same idea as the stage light, but for the
+   room itself. Soft patches of light scratches, specks and scuffs, alternating
+   sides, each fading out to nothing (scripts/make_textures.py). Still, never
+   moving, and faint enough to sit under any text. */
+.section { isolation: isolate; overflow-x: clip; }
+.section::before, #work::after {
+  content: ""; position: absolute; z-index: -1; pointer-events: none;
+  width: clamp(760px, 100vw, 1500px); aspect-ratio: 1400 / 1000;
+  background: no-repeat center / 100% 100%; opacity: 0.6;
+}
+#about::before { background-image: url("/media/texture-scratch.webp"); top: -8%; right: -18%; }
+#services::before { background-image: url("/media/texture-speck.webp"); top: 4%; left: -22%; }
+#work::before { background-image: url("/media/texture-worn.webp"); top: 2%; right: -24%; }
+#work::after { background-image: url("/media/texture-scratch.webp"); bottom: -6%; left: -26%; transform: scaleX(-1) rotate(4deg); }
+#process::before { background-image: url("/media/texture-speck.webp"); top: -10%; right: -20%; transform: scaleY(-1); }
+#contact::before { background-image: url("/media/texture-worn.webp"); top: 0; left: -24%; transform: scaleX(-1); }
+@media (max-width: 760px) { .section::before, #work::after { width: 180vw; opacity: 0.7; } }
