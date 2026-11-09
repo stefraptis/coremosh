@@ -6,7 +6,7 @@ The site of Coremosh software studios. It shows the work (Bandeon, tiltguild.com
 
 **One page** (Stefanos, 2 Nov 2026; order changed 9 Nov). Everything is on the home page, in this order: hero, About the studio (`#about`, title big on the left, text on the right), What we do (`#services`, apps and websites), Work (`#work`), How we work (`#process`, kicker "Setlist"), Contact with the form (`#contact`). The only other pages are /privacy/ and the 404 page. The menu links to `/#about`, `/#work`, `/#contact` (so it also works from Privacy); `js/motion.js` marks the section in view. Contact buttons everywhere: hero "Get in touch", "Start yours", and "Ask about an app / a website" links that also pick the topic in the form (`data-about`, or `/?about=website`).
 
-Live address: https://www.coremosh.com (coremosh.com redirects there). Hosted on GitHub Pages from `main`. Stefanos commits and pushes from GitHub Desktop on Windows.
+Live address: https://www.coremosh.com (coremosh.com redirects there). Hosted on GitHub Pages from `main`. Stefanos works on Windows and uses git in the terminal for this repo (not GitHub Desktop): `git pull` to get changes.
 
 ## Content rules
 
