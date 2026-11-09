@@ -399,7 +399,7 @@ section[id] { scroll-margin-top: 88px; }
 .about h2 { font-size: clamp(3.5rem, 8.4vw, 8rem); max-width: 6ch; }
 .about-text { display: grid; gap: 0; padding-top: 18px; border-top: 1px solid var(--border-strong); }
 @media (min-width: 900px) { .about-text { margin-top: 0.6em; } }
-.about-text .lead { margin: 0 0 1.1em; color: var(--text); font-size: clamp(1.375rem, 2.3vw, 1.9375rem); line-height: 1.32; max-width: 30ch; }
+.about-text .lead { margin: 0 0 1.1em; color: var(--text); font-size: clamp(1.375rem, 2.3vw, 1.9375rem); line-height: 1.32; max-width: 36ch; }
 .about-text p { color: var(--muted); max-width: 54ch; }
 .contact { padding-bottom: clamp(64px, 7vw, 104px); }
 .contact-panel { text-align: left; display: grid; gap: 40px 64px; padding: clamp(32px, 5vw, 72px); }

@@ -4,14 +4,16 @@ The site of Coremosh software studios. It shows the work (Bandeon, tiltguild.com
 
 **Design is off the site for now** (Stefanos, 8 Nov 2026: "we will put it again in the future"). No design service card, Design section, Design menu or footer link, design contact topic, or design wording. The last version with design is commit `6df29c0` (section, Tilt Guild release cards in `media/design/`, styles `.offer` and `.wall`); bring it back from there when Stefanos asks. Every path ends at Contact.
 
-**One page** (Stefanos, 2 Nov 2026; order changed 9 Nov). Everything is on the home page, in this order: hero, About the studio (`#about`, title big on the left, text on the right), What we do (`#services`, apps and websites), Work (`#work`), How we work (`#process`, kicker "Setlist"), Contact with the form (`#contact`). The only other pages are /privacy/ and the 404 page. The menu links to `/#about`, `/#work`, `/#contact` (so it also works from Privacy); `js/motion.js` marks the section in view. Contact buttons everywhere: hero "Get in touch", "Start yours", and "Ask about an app / a website" links that also pick the topic in the form (`data-about`, or `/?about=website`).
+**One page** (Stefanos, 2 Nov 2026; order changed 9 Nov). Everything is on the home page, in this order: hero, About the studio (`#about`, title big on the left, text on the right), What we do (`#services`, apps and websites), Work (`#work`), How we work (`#process`, kicker "Setlist", intro "From the first conversation to long after launch."), Contact with the form (`#contact`). The only other pages are /privacy/ and the 404 page. The menu links to `/#about`, `/#work`, `/#contact` (so it also works from Privacy); `js/motion.js` marks the section in view. Contact buttons everywhere: hero "Get in touch", "Start yours", and "Ask about an app / a website" links that also pick the topic in the form (`data-about`, or `/?about=website`).
 
 Live address: https://www.coremosh.com (coremosh.com redirects there). Hosted on GitHub Pages from `main`. Stefanos works on Windows and uses git in the terminal for this repo (not GitHub Desktop): `git pull` to get changes.
 
 ## Content rules
 
 - Motto (Stefanos, 1 Nov 2026): "We build the core. You make the noise."
-- English only.
+- English only, British spelling (organise, colour, centralised, optimisation). Proper names keep their own spelling (SIL Open Font License).
+- The home page copy is Stefanos's own text (9 Nov 2026, "Website Copy 2026"): About, What we do, the two projects and How we work (Discover, Design, Develop, Maintain). Keep it as written; only adapt headings to sentence case with "and" instead of "&". The word "design" is fine in that copy (the process step, "thoughtfully designed"); only the design service stays off the site.
+- Tone (Stefanos): professional, direct and confident; no generic SaaS terms or promotional language; the link between music and software stays clear without limiting the studio to music; describe real functions; concise over marketing.
 - No prices, rates, packages or offers anywhere. Show the work, then "Get in touch".
 - Brand only: Coremosh speaks as "we". No personal names, no employer, no CV.
 - No analytics offering on the site (removed 1 Nov 2026 at Stefanos's request).
@@ -20,7 +22,7 @@ Live address: https://www.coremosh.com (coremosh.com redirects there). Hosted on
 - The idle game is not shown until Stefanos says so.
 - Bandeon: studios are hidden in the app, so the site does not mention them.
 - Plain verbs, sentence case, no em dashes, no all-caps labels.
-- Write for clients, not developers: no stack, frameworks, stylesheets, file sizes, speed budgets or accessibility test results on the site.
+- Write for clients, not developers: no stack, frameworks, stylesheets, file sizes, speed budgets or accessibility test results on the site. Benefits a client understands are fine (fast, responsive, search engine optimisation, accessible across devices).
 
 ## Look: a rehearsal room at night, drawn clean (1 Nov 2026)
 
