@@ -165,6 +165,12 @@ h3 { font-size: clamp(1.75rem, 2.6vw, 2.25rem); }
 .logo-fly .hero-logo img { visibility: hidden; }
 .logo-still .mark img { opacity: 0; transition: opacity 300ms ease-out; }
 .logo-still.logo-out .mark img { opacity: 1; }
+/* The menu waits for the logo: on the home page it fades in as the logo lands
+   in the header (or, with reduced motion, as the header logo appears). It shows
+   at once if someone tabs into it before scrolling. */
+.js .page-home:not(.logo-fly):not(.logo-still) .nav { opacity: 0; }
+.logo-fly .nav, .logo-still .nav { opacity: 0; pointer-events: none; transition: opacity 350ms ease-out; }
+.logo-fly.is-docked .nav, .logo-still.logo-out .nav, .page-home .nav:focus-within { opacity: 1; pointer-events: auto; }
 @media (max-width: 560px) { .logo-fly .mark, .logo-still .mark { height: 30px; } }
 @media (max-width: 370px) { .logo-fly .mark, .logo-still .mark { height: 24px; } }
 .hero .actions { justify-content: center; }

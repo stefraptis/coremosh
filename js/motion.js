@@ -83,6 +83,7 @@
         const m = mark.getBoundingClientRect();
         const p = Math.min(1, Math.max(0, scrollY / range));
         const e = p * p * (3 - 2 * p);
+        body.classList.toggle("is-docked", e > 0.92);  // the menu comes in as the logo lands
         const s = 1 + (m.width / w - 1) * e;
         const x = (left0 - m.left) * (1 - e);
         const y = (top0 - scrollY - m.top) * (1 - e);
