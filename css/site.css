@@ -222,7 +222,7 @@ h3 { font-size: clamp(1.75rem, 2.6vw, 2.25rem); }
 /* What we do: three panels */
 
 .services { display: grid; gap: 16px; }
-@media (min-width: 900px) { .services { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 980px) { .services { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 .service {
   position: relative; display: grid; gap: 14px; align-content: start; padding: clamp(28px, 3vw, 40px);
   background: linear-gradient(180deg, var(--surface-2), var(--surface)); border: 1px solid var(--border); border-radius: var(--radius);
@@ -438,3 +438,24 @@ section[id] { scroll-margin-top: 88px; }
 #process::before { background-image: url("/media/texture-speck.webp"); top: -10%; right: -20%; transform: scaleY(-1); }
 #contact::before { background-image: url("/media/texture-worn.webp"); top: 0; left: -24%; transform: scaleX(-1); }
 @media (max-width: 760px) { .section::before, #work::after { width: 180vw; opacity: 0.7; } }
+
+/* What we do: a one-line summary under each service title */
+.service .service-line { color: var(--text); font-size: 1.0625rem; line-height: 1.45; }
+
+/* Design and artwork: the four areas, under the service cards (#design) */
+.areas { margin-top: 16px; padding: clamp(24px, 3vw, 36px); border: 1px solid var(--border); border-radius: var(--radius); background: rgba(239, 233, 222, 0.02); scroll-margin-top: 96px; }
+.areas-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 24px; margin-bottom: 18px; }
+.areas-head .kicker { margin: 0; }
+.areas-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+@media (min-width: 640px) { .areas-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1100px) { .areas-list { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.areas-list li { padding: 18px 20px; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; color: var(--muted); font-size: 0.9375rem; line-height: 1.5; }
+.areas-list strong { display: block; color: var(--text); font-family: var(--display); font-weight: 800; font-size: 1.5rem; line-height: 1; margin-bottom: 8px; }
+/* Three cards side by side: line up icon, title, summary, text and link across
+   the row, so a title that wraps does not push one card's text out of step. */
+@media (min-width: 980px) {
+  @supports (grid-template-rows: subgrid) {
+    .service { display: grid; grid-row: span 5; grid-template-rows: subgrid; row-gap: 14px; }
+    .service .arrow-link { align-self: end; }
+  }
+}

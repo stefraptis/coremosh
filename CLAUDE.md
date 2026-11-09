@@ -1,10 +1,10 @@
 # Coremosh website
 
-The site of Coremosh software studios. It shows the work (Bandeon, tiltguild.com) and what Coremosh makes: apps and websites. Websites are for anyone, music or not.
+The site of Coremosh software studios. It shows the work (Bandeon, tiltguild.com) and what Coremosh makes: apps, websites, and design and artwork. Websites are for anyone, music or not.
 
-**Design is off the site for now** (Stefanos, 8 Nov 2026: "we will put it again in the future"). No design service card, Design section, Design menu or footer link, design contact topic, or design wording. The last version with design is commit `6df29c0` (section, Tilt Guild release cards in `media/design/`, styles `.offer` and `.wall`); bring it back from there when Stefanos asks. Every path ends at Contact.
+**Design is back as a service** (Stefanos, 9 Nov 2026; it was off from 8 Nov). Three areas of work: Apps, Websites, Design and artwork (visual identities, music artwork and graphic design). On the site: a third card in What we do ("Design and artwork", link "Explore design services" to `#design`), and under the cards a strip `#design` with the four areas (Branding and logo design, Music and album artwork, Posters and promotional design, Merchandise design) and "Ask about design"; the contact form has the topic "Design and artwork" (`design`, also `/?about=design`). It must not read like a generic design agency: same cards, same voice, music first. The old Design section with Tilt Guild release cards (`media/design/`, styles `.offer` and `.wall`) is still off; it is in commit `6df29c0` if Stefanos wants to show pieces. Every path ends at Contact.
 
-**One page** (Stefanos, 2 Nov 2026; order changed 9 Nov). Everything is on the home page, in this order: hero, About the studio (`#about`, title big on the left, text on the right), What we do (`#services`, apps and websites), Work (`#work`), How we work (`#process`, kicker "Setlist", intro "From the first conversation to long after launch."), Contact with the form (`#contact`). The only other pages are /privacy/ and the 404 page. The menu links to `/#about`, `/#work`, `/#contact` (so it also works from Privacy); `js/motion.js` marks the section in view. Contact buttons everywhere: hero "Get in touch", "Start yours", and "Ask about an app / a website" links that also pick the topic in the form (`data-about`, or `/?about=website`).
+**One page** (Stefanos, 2 Nov 2026; order changed 9 Nov). Everything is on the home page, in this order: hero, About the studio (`#about`, title big on the left, text on the right), What we do (`#services`, apps, websites, design and artwork, then the `#design` strip), Work (`#work`), How we work (`#process`, kicker "Setlist", intro "From the first conversation to long after launch."), Contact with the form (`#contact`). The only other pages are /privacy/ and the 404 page. The menu links to `/#about`, `/#work`, `/#contact` (so it also works from Privacy); `js/motion.js` marks the section in view. Contact buttons everywhere: hero "Get in touch", "Start yours", and "Ask about an app / a website / design" links that also pick the topic in the form (`data-about`, or `/?about=website`).
 
 Live address: https://www.coremosh.com (coremosh.com redirects there). Hosted on GitHub Pages from `main`. Stefanos works on Windows and uses git in the terminal for this repo (not GitHub Desktop): `git pull` to get changes.
 
@@ -12,12 +12,12 @@ Live address: https://www.coremosh.com (coremosh.com redirects there). Hosted on
 
 - Motto (Stefanos, 1 Nov 2026): "We build the core. You make the noise."
 - English only, British spelling (organise, colour, centralised, optimisation). Proper names keep their own spelling (SIL Open Font License).
-- The home page copy is Stefanos's own text (9 Nov 2026, "Website Copy 2026"): About, What we do, the two projects and How we work (Discover, Design, Develop, Maintain). Keep it as written; only adapt headings to sentence case with "and" instead of "&". The word "design" is fine in that copy (the process step, "thoughtfully designed"); only the design service stays off the site.
+- The home page copy is Stefanos's own text (9 Nov 2026, "Website Copy 2026"): About, What we do, the two projects and How we work (Discover, Design, Develop, Maintain). Keep it as written; only adapt headings to sentence case with "and" instead of "&" (so "Design & Artwork" is "Design and artwork"). Each service card has a one-line summary (`.service-line`, Stefanos's wording) above its description. The word "design" is fine in that copy (the process step, "thoughtfully designed"); only the design service stays off the site.
 - Tone (Stefanos): professional, direct and confident; no generic SaaS terms or promotional language; the link between music and software stays clear without limiting the studio to music; describe real functions; concise over marketing.
 - No prices, rates, packages or offers anywhere. Show the work, then "Get in touch".
 - Brand only: Coremosh speaks as "we". No personal names, no employer, no CV.
 - No analytics offering on the site (removed 1 Nov 2026 at Stefanos's request).
-- Design (when it returns): say what we offer and show the pieces. No write-ups that analyse the logos. The Bandeon logo is not final: do not show it anywhere.
+- Design: say what we offer (and show pieces if Stefanos adds them). No write-ups that analyse the logos. The Bandeon logo is not final: do not show it anywhere.
 - Say "Coremosh software studios". Do not explain the name with a game-studio comparison.
 - The idle game is not shown until Stefanos says so.
 - Bandeon: studios are hidden in the app, so the site does not mention them.
