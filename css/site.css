@@ -433,9 +433,9 @@ section[id] { scroll-margin-top: 88px; }
 }
 #about::before { background-image: url("/media/texture-scratch.webp"); top: -8%; right: -18%; }
 #services::before { background-image: url("/media/texture-speck.webp"); top: 4%; left: -22%; }
-#work::before { background-image: url("/media/texture-worn.webp"); top: 2%; right: -24%; }
-#work::after { background-image: url("/media/texture-scratch.webp"); bottom: -6%; left: -26%; transform: scaleX(-1) rotate(4deg); }
-#process::before { background-image: url("/media/texture-speck.webp"); top: -10%; right: -20%; transform: scaleY(-1); }
+#work::before { background-image: url("/media/texture-speck.webp"); top: 2%; left: -24%; }
+#work::after { background-image: url("/media/texture-scratch.webp"); bottom: -6%; right: -26%; transform: scaleX(-1) rotate(4deg); }
+#process::before { background-image: url("/media/texture-worn.webp"); top: -10%; right: -20%; transform: scaleY(-1); }
 #contact::before { background-image: url("/media/texture-worn.webp"); top: 0; left: -24%; transform: scaleX(-1); }
 @media (max-width: 760px) { .section::before, #work::after { width: 180vw; opacity: 0.7; } }
 
