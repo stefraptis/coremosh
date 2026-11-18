@@ -24,7 +24,16 @@ Live address: https://www.coremosh.com (coremosh.com redirects there). Hosted on
 - Plain verbs, sentence case, no em dashes, no all-caps labels.
 - Write for clients, not developers: no stack, frameworks, stylesheets, file sizes, speed budgets or accessibility test results on the site. Benefits a client understands are fine (fast, responsive, search engine optimisation, accessible across devices).
 
-## Look: a rehearsal room at night, drawn clean (1 Nov 2026)
+## Search (Stefanos, 18 Nov 2026)
+
+Goal: when a band or musician looks for someone to build a website, a logo or artwork, Coremosh shows up, first in Greece, then Europe and the world. English only (Stefanos said no to a Greek page on 18 Nov); based in Greece, no city.
+- Words musicians search for, kept in the copy where they read naturally: bands, musicians, artists, independent labels, band websites, band logos, album artwork, posters, merchandise. Never stuff keywords or hide text.
+- Home `<title>`: "Websites, logos and apps for bands and musicians | Coremosh". Description names Greece, Europe and worldwide. The contact lead says "Based in Greece, working with musicians across Europe and beyond."
+- Structured data (JSON-LD at the end of `_src/pages/home.html`): Organization (address country GR, area served Greece, Europe, worldwide, the three services as offers without prices), WebSite, and Tilt Guild and Bandeon with Coremosh as creator. Add `sameAs` links when Coremosh has social profiles.
+- Share preview: `media/og-image.jpg` (1200x630, logo, motto, one line). Logo for search engines: `brand/coremosh-logo.png` (black on white).
+- Credit links back to coremosh.com: tiltguild.com footer "Made by Coremosh", bandeon.app footer "Μια εφαρμογή της Coremosh". Keep them.
+
+, drawn clean (1 Nov 2026)
 
 The idea stays (dark room, warm stage light, the metal logo) but the execution is modern and crisp. Stefanos rejected the "sketchy" version: no worn-ink filters, torn paper, tape, crooked prints or stamps. Do not copy outside references; they only show what "modern" means.
 
